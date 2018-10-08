@@ -47,5 +47,9 @@ module.exports = {
     output: {
         filename: 'app.bundle.js',
         path: path.resolve(__dirname, 'dist')
-    }
+    },
+    resolve: {
+        // Add '.ts' and '.tsx' as resolvable extensions.
+        extensions: [".ts", ".tsx", ".js", ".json"]
+    },
 };

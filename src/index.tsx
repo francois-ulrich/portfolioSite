@@ -1,13 +1,11 @@
-import './style.scss';
-
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-export interface HelloProps { compiler: string; framework: string; }
+import Header from "./components/Header/Header";
 
-export const Hello = (props: HelloProps) => <h1>Hello from {props.compiler} and {props.framework}!</h1>;
+const element = <Header name="fran" />;
 
 ReactDOM.render(
-    <Hello compiler="TypeScript" framework="React" />,
-    document.getElementById("main")
+    element, 
+    document.getElementById('root')
 );

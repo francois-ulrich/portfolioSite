@@ -1,7 +1,7 @@
 {
-  "name": "webpack-demo",
-  "version": "1.0.0",
-  "description": "",
+  "name": "francois-ulrich-website",
+  "version": "0.0.1",
+  "description": "François Ulrich's portfolio and resume website",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server",
@@ -12,9 +12,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^10.10.3",
+    "@types/node": "^10.11.4",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
+    "eslint": "^5.6.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^2.0.0",
     "html-loader": "^0.5.5",
@@ -23,19 +24,22 @@
     "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
-    "ts-loader": "^5.1.0",
-    "typescript": "^3.0.3",
+    "stylelint": "^9.6.0",
+    "stylelint-config-recommended": "^2.1.0",
+    "ts-loader": "^5.2.1",
+    "typescript": "^3.1.1",
     "url-loader": "^1.1.1",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.1",
-    "webpack-dev-server": "^3.1.8"
+    "webpack-dev-server": "^3.1.9"
   },
   "dependencies": {
-    "@types/react": "^16.4.14",
+    "@types/react": "^16.4.16",
     "@types/react-dom": "^16.0.8",
     "babel-cli": "^6.26.0",
     "babel-preset-react-app": "^3.1.2",
     "ejs": "^2.6.1",
+    "eslint-config-airbnb": "^17.1.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2"
   }
