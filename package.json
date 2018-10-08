@@ -35,12 +35,17 @@
   },
   "dependencies": {
     "@types/react": "^16.4.16",
+    "@types/react-bootstrap": "^0.32.14",
     "@types/react-dom": "^16.0.8",
+    "@types/reactstrap": "^6.4.0",
     "babel-cli": "^6.26.0",
     "babel-preset-react-app": "^3.1.2",
+    "bootstrap-css-only": "^4.1.1",
     "ejs": "^2.6.1",
     "eslint-config-airbnb": "^17.1.0",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-bootstrap": "^0.32.4",
+    "react-dom": "^16.5.2",
+    "reactstrap": "^6.5.0"
   }
 }

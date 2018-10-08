@@ -1,11 +1,13 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import Header from "./components/Header/Header";
+import Website from "./components/Website";
 
-const element = <Header name="fran" />;
+import 'bootstrap-css-only';
+
+const content = <Website />;
 
 ReactDOM.render(
-    element, 
+    content, 
     document.getElementById('root')
 );

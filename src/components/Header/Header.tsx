@@ -1,18 +1,20 @@
 import * as React from "react";
+import { Container, Row } from "reactstrap";
 
-import "./HeaderStyle.scss";
+import HeaderLeft from "./HeaderLeft/HeaderLeft";
+import "./Header.scss";
 
-interface Props{
-    name: string,
-};
+//import 'bootstrap-css-only';
 
-export default class Header extends React.Component<Props, {}> {
+export default class Header extends React.Component {
     render(){
         return (
             <header>
-                <p> 
-                    {this.props.name} 
-                </p>
+                <Container>
+                    <Row>
+                        <HeaderLeft/>
+                    </Row>
+                </Container>
             </header>
         );
     }
