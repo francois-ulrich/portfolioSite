@@ -5,6 +5,10 @@ import "./Website.scss";
 
 export default class Website extends React.Component{
     render(){
-        return <Header/>;
+        return (
+            <div className="website">
+                <Header/>
+            </div>
+        );
     }
 }

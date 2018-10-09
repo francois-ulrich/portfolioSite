@@ -1,12 +1,19 @@
 import * as React from "react";
 
 import "./HeaderLogo.scss";
+var logo = require("./logo.png");
 
-export default class HeaderLogo extends React.Component {
+interface Props{
+    text:string,
+}
+
+export default class HeaderLogo extends React.Component<Props> {
     render(){
         return (
-            <div className="headerLogo">
-            </div>
+            <a className="headerLogo">
+                <img src={logo} className="headerLogoImage"/>
+                <span className="headerLogoText">{this.props.text}</span>
+            </a>
         );
     }
 }

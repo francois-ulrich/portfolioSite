@@ -7,8 +7,8 @@ import "./HeaderLeft.scss";
 export default class HeaderLeft extends React.Component {
     render(){
         return (
-            <Col className="headerLeft align-items-center" md={4} >
-                <HeaderLogo />
+            <Col className="headerLeft d-flex align-items-center" md={4}>
+                <HeaderLogo text="François Ulrich"/>
             </Col>
         );
     }
