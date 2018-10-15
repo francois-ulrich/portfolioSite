@@ -1,25 +1,16 @@
 import * as React from "react";
-//import { Col } from "reactstrap";
-
-import {BrowserRouter, Route} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import "./HeaderNav.scss";
 
 export default class HeaderNav extends React.Component {
     render(){
         return (
-            <BrowserRouter>
-            
-            </BrowserRouter>
-
-
-            /*
             <nav className="headerNav">
-                <a href="/">À propos</a>
-                <a href="/parcours">Parcours</a>
-                <a href="/portfolio">Portfolio</a>
+                <NavLink to="/">À propos</NavLink>
+                <NavLink to="/parcours">Parcours</NavLink>
+                <NavLink to="/portfolio">Portfolio</NavLink>
             </nav>
-            */
         );
     }
 }
