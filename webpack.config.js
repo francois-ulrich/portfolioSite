@@ -57,9 +57,6 @@ module.exports = {
                 }]
             },
 
-        
-
-            /*
             // FONTS
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -71,7 +68,7 @@ module.exports = {
                         }
                 }]
             }
-            */
+            
         ]
     },
     output: {

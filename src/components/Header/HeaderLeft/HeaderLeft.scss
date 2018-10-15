@@ -1,4 +1,12 @@
 .headerLeft{
-    background-color: blue;
+    background-color: #474747;
     height:70px;
+
+    &:after{
+        position:absolute;
+        height:70px;
+        width: 23px;
+        right:-23px;
+        content:url("./headerShard.svg");
+    }
 }
