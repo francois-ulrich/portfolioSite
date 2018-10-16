@@ -3,8 +3,6 @@ import { Col } from "reactstrap";
 
 import HeaderNav from "./HeaderNav/HeaderNav";
 
-import "./HeaderRight.scss";
-
 export default class HeaderRight extends React.Component {
     render(){
         return (

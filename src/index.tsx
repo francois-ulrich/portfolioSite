@@ -1,12 +1,13 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import Website from "./components/Website";
+import Root from "./components/Root";
 
-import 'bootstrap-css-only';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.scss';
 import './fonts/fonts.scss';
 
-const content = <Website />;
+const content = <Root />;
 
 ReactDOM.render(
     content, 

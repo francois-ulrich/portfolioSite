@@ -4,8 +4,6 @@ import { Container, Row } from "reactstrap";
 import HeaderLeft from "./HeaderLeft/HeaderLeft";
 import HeaderRight from "./HeaderRight/HeaderRight";
 
-import "./Header.scss";
-
 //import 'bootstrap-css-only';
 
 export default class Header extends React.Component {

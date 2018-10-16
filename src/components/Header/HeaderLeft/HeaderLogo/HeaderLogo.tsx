@@ -1,7 +1,6 @@
 import * as React from "react";
 
-import "./HeaderLogo.scss";
-var logo = require("./logo.png");
+var logo = require("./../../../../img/logo.png");
 
 interface Props{
     text:string,

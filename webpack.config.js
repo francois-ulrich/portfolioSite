@@ -13,17 +13,6 @@ module.exports = {
     module: {
         rules: [
             // CSS
-            /*
-            {
-                test:/\.(s*)css$/,
-                //use: ["style-loader", "css-loader", "sass-loader"],
-                use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: "css-loader"
-                })
-            },
-            */
-
             {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract({
@@ -38,6 +27,31 @@ module.exports = {
                     use: ["css-loader", "sass-loader"],
                 })
             },
+           /*
+           // CONFIG FOR CSS MODULES
+            {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: "css-loader"
+                })
+            },
+            {
+                test: /\.scss$/,
+                include: path.join(__dirname, 'src/components'),
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'typings-for-css-modules-loader',
+                        options: {
+                            modules: true,
+                            namedExport: true,
+                            sass: true,
+                        }
+                    }
+                ]
+            },
+            */
 
             // TSX
             {
@@ -68,7 +82,6 @@ module.exports = {
                         }
                 }]
             }
-            
         ]
     },
     output: {
@@ -85,6 +98,6 @@ module.exports = {
             template: './src/index.html',
             filename: './index.html' //relative to root of the application
         }),
-        new ExtractTextPlugin('index.css')
+        new ExtractTextPlugin('index.css'),
     ]
 };

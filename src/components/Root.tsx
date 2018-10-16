@@ -8,9 +8,7 @@ import Home from "./Pages/Home/Home";
 import Portfolio from "./Pages/Portfolio/Portfolio";
 import PageNotFound from "./Pages/PageNotFound/PageNotFound";
 
-require('./Website.scss');
-
-export default class Website extends React.Component{
+export default class Root extends React.Component{
     render(){
         return (
             <div className="website">
@@ -19,8 +17,8 @@ export default class Website extends React.Component{
                         <Header/>
                         <Container className="websiteContainer">
                             <Switch>
-                                <Route path="/" component={Home} exact />
-                                <Route path="/portfolio" component={Portfolio} />
+                                <Route path="/" component={Portfolio} />
+                                <Route path="/portfolio" component={Home} />
                                 <Route component={PageNotFound} />
                             </Switch>
                         </Container>
