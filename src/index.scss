@@ -5,92 +5,153 @@ $medium-gray : #474747;
 $white : #eaeaea;
 $cyan : #00ffcc;
 
-#root{
-    min-height:100vh;
-    background-color: $darker-gray;
-    
-    .websiteContainer{
-        background-color: $dark-gray;
-        color:$white;
-        height: 100vh;
-        padding-top: 70px;
-        padding-bottom: 70px;
+
+body{
+    font-family: 'Kelson Sans';
+
+
+    h1{
+        color:$cyan;
+        text-transform: uppercase;
+        font-family: 'Kelson Sans';
+        font-weight: bold;
+        letter-spacing: 5px;
     }
-
-    header{
-        background-color: $medium-gray;
-        height: 70px;
     
-        &>.container{
-            background-color: $medium-darker-gray;
-            height: 100%;
+    #root{
+        min-height:100vh;
+        background-color: $darker-gray;
+        
+        .websiteContainer{
+            background-color: $dark-gray;
+            color:$white;
+            height: 100vh;
+            padding-top: 70px;
+            padding-bottom: 70px;
         }
-
-        .headerLeft{
+    
+        header{
             background-color: $medium-gray;
-            height:70px;
+            height: 70px;
         
-            &:after{
-                position:absolute;
-                height:70px;
-                width: 23px;
-                right:-23px;
-                content:url("./img/headerShard.svg");
+            &>.container{
+                background-color: $medium-darker-gray;
+                height: 100%;
             }
-
-            .headerLogo{
-                width:250px;
-                height:50px;
+    
+            .headerLeft{
+                background-color: $medium-gray;
+                height:70px;
             
-                .headerLogoImage{
-                    height:100%;
-                    width:auto;
+                &:after{
+                    position:absolute;
+                    height:70px;
+                    width: 23px;
+                    right:-23px;
+                    content:url("./img/headerShard.svg");
                 }
+    
+                .headerLogo{
+                    width:250px;
+                    height:50px;
+                
+                    .headerLogoImage{
+                        height:100%;
+                        width:auto;
+                    }
+                
+                    .headerLogoText{
+                        font-family: Antonio;
+                        color: $white;
+                        text-transform: uppercase;
+                        font-size: 20px;
+                        letter-spacing: 2px;
+                        margin-left:8px;
+                    }
+                }
+            }
+    
+            .headerRight{
+                background-color: $medium-gray ;
+                height:70px;
             
-                .headerLogoText{
-                    font-family: Antonio;
-                    color: $white;
-                    text-transform: uppercase;
-                    font-size: 20px;
-                    letter-spacing: 2px;
-                    margin-left:8px;
+                &:before{
+                    position:absolute;
+                    height:70px;
+                    width: 23px;
+                    left:-23px;
+                    content:url("./img/headerShard.svg");
+                    transform: rotate(180deg);
+                }
+    
+                nav.headerNav{
+                    width: 100%;
+                    height:100%;
+                    display:flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                
+                    &>a{
+                        color:$white;
+                        //font-family: 'Kelson Sans';
+                        font-size: 12pt;
+                        text-decoration: none;
+                        transition:all 0.4s;
+                        display: inline-block;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                
+                        &:hover{
+                            color:$cyan ;
+                        }
+                    }
                 }
             }
         }
-
-        .headerRight{
-            background-color: $medium-gray ;
-            height:70px;
-        
-            &:before{
-                position:absolute;
-                height:70px;
-                width: 23px;
-                left:-23px;
-                content:url("./img/headerShard.svg");
-                transform: rotate(180deg);
-            }
-
-            nav.headerNav{
-                width: 100%;
+    
+        .portfolio{
+            .portfolioFiltersContainer{
+                background-color: red;
+                min-height: 32px;
                 height:100%;
-                display:flex;
-                justify-content: space-evenly;
-                align-items: center;
-            
-                &>a{
-                    color:$white;
-                    font-family: 'Kelson Sans';
-                    font-size: 12pt;
-                    text-decoration: none;
-                    transition:all 0.4s;
-                    display: inline-block;
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-            
-                    &:hover{
-                        color:$cyan ;
+                padding: 16px;
+
+                .portfolioFilter{
+                    input[type="checkbox"].portfolioFilterCheckbox{
+                        -webkit-appearance: none;
+                        background-color: $dark-gray;
+                        display: inline-block;
+                        width: 14px;
+                        height: 14px;
+                        position:relative;
+
+                        &:checked:after {
+                            content: '\2714';
+                            font-size: 16px;
+                            position: absolute;
+                            top: -4px;
+                            left: 1px;
+                            color: $cyan;
+                        }
+
+                        &:focus{
+                            outline: none;
+                        }
                     }
+
+                    span.portfolioFilterName{
+                        padding-left: 15px;
+                    }
+                }
+            }
+    
+            .portfolioElementsContainer{
+                background-color: blue;
+                min-height: 32px;
+
+                .portfolioElement{
+                    width: 33%;
+                    background-color: green;
                 }
             }
         }

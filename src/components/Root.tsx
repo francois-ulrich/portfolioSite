@@ -1,6 +1,6 @@
 import * as React from "react";
 import {Container} from 'reactstrap';
-import {BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import {BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Header from "./Header/Header";
 

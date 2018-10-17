@@ -70,18 +70,17 @@ module.exports = {
                     }
                 }]
             },
-
             // FONTS
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
                 use: [{
-                        loader: 'file-loader',
-                        options: {
-                            name: './fonts/[hash].[ext]',
-                            outputPath: 'fonts/'
-                        }
+                    loader: 'file-loader',
+                    options: {
+                        name: './fonts/[hash].[ext]',
+                        outputPath: 'fonts/'
+                    }
                 }]
-            }
+            },
         ]
     },
     output: {
