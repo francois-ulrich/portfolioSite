@@ -1,6 +1,8 @@
 import * as React from "react";
 import {Col} from 'reactstrap';
 
+var imgToowhisp = require("./img/toowhisp.jpg");
+
 interface PortfolioElementProps{
     title: string,
     description: string,
@@ -15,15 +17,15 @@ export default class PortfolioElement extends React.Component<PortfolioElementPr
     render(){
         return (
             <div className="portfolioElement">
-                <h2>{this.props.title}</h2>
                 <div className="portfolioElementThumbnail">
                     <div className="portfolioElementThumbnailImageContainer">
-
+                        <img src={imgToowhisp}/>
                     </div>
-                    <div className="portfolioElementThumbnailOverlayContainer">
-                        <a className="portfolioElementLink" href={this.props.url}>Voir le site</a>
-                    </div>
+                    <a className="portfolioElementLink" href={this.props.url} target="_blank">Voir le site</a>
                 </div>
+
+                <h2>{this.props.title}</h2>
+
                 <p className="portfolioElementDescription">{this.props.description}</p>
             </div>
         );

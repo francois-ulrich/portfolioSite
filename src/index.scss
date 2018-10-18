@@ -9,13 +9,22 @@ $cyan : #00ffcc;
 body{
     font-family: 'Kelson Sans';
 
-
     h1{
         color:$cyan;
         text-transform: uppercase;
         font-family: 'Kelson Sans';
         font-weight: bold;
         letter-spacing: 5px;
+    }
+
+    h2{
+        font-size:24px;
+    }
+
+    p{
+        font-size:14px;
+        font-weight: lighter;
+        letter-spacing: 1px;
     }
     
     #root{
@@ -25,7 +34,6 @@ body{
         .websiteContainer{
             background-color: $dark-gray;
             color:$white;
-            height: 100vh;
             padding-top: 70px;
             padding-bottom: 70px;
         }
@@ -110,6 +118,7 @@ body{
         }
     
         .portfolio{
+            // Filters
             .portfolioFiltersContainer{
                 background-color: red;
                 min-height: 32px;
@@ -145,13 +154,93 @@ body{
                 }
             }
     
+            // Portfolio elements
             .portfolioElementsContainer{
-                background-color: blue;
+                //background-color: blue;
                 min-height: 32px;
 
                 .portfolioElement{
                     width: 33%;
-                    background-color: green;
+                    display: inline-block;
+                    padding: 0px 20px 20px 0px;
+
+                    // Lign below block
+                    &::after{
+                        content:" ";
+                        display:block;
+                        background-color:$medium-gray;
+                        height:1px;
+                        width:60%;
+                        margin: 0 20%;
+                        transition: all 0.4s;
+                    }
+
+                    &>.portfolioElementThumbnail{
+                        background-color: black;
+                        position: relative;
+                        width: 100%;
+                        padding-top: 100%;
+                        margin-bottom: 16px;
+                        overflow:hidden;
+
+                        &>.portfolioElementThumbnailImageContainer{
+                            background-color:red;
+                            top:0px;
+                            height: 100%;
+                            &>img{
+                                position:absolute;
+                                width:100%;
+                                height:auto;
+                                opacity: 1;
+                                transition: all 0.6s;
+                                top: 0px;
+                                left: 0px;
+                            }
+                        }
+
+                        &>a.portfolioElementLink{
+                            color: $cyan;
+                            font-weight: lighter;
+                            font-family: 'Kelson Sans';
+                            text-transform: uppercase;
+                            letter-spacing: 2px;
+                            border: 1px solid $cyan;
+                            padding: 10px;
+                            position: absolute;
+                            top: 60%;
+                            left: calc(50% - 60px);
+                            opacity:0;
+                            transition: all 0.6s;
+
+                            &:hover{
+                                color: black;
+                                background-color: $cyan;
+                                text-decoration:none;
+                            }
+                        }
+                    }
+
+                    &:hover{
+                        &::after{
+                            background-color:$white;
+                            width: 80%;
+                            margin: 0 10%;
+                        }
+
+                        & a.portfolioElementLink{
+                            opacity: 1;
+                            top: calc(50% - 13px);
+                        }
+
+                        & .portfolioElementThumbnailImageContainer{
+                            &>img{
+                                left: -8%;
+                                top: -8%;
+                                width: 116%;
+                                opacity: 0.5;
+                            }
+                        }
+                    }
                 }
             }
         }
