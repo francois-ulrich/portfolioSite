@@ -3,14 +3,24 @@
         "title": "Titre de la réalisation 1",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras",
         "url": "https://corporate.toowhisp.fr/",
-        "technologies": [],
+        "technologies": [
+            {"id":1,"name":"HTML"},
+            {"id":2,"name":"CSS"},
+            {"id":3,"name":"SASS"},
+            {"id":4,"name":"LESS"}
+        ],
         "category_id":1
     },
     {
         "title": "Titre de la réalisation 2",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras",
         "url": "https://corporate.toowhisp.fr/",
-        "technologies": [],
+        "technologies": [
+            {"id":5,"name":"Bootstrap"},
+            {"id":6,"name":"JavaScript"},
+            {"id":7,"name":"TypeScript"},
+            {"id":8,"name":"JQuery"}
+        ],
         "category_id":2
     }
 ]

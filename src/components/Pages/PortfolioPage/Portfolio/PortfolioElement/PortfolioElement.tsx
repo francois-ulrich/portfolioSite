@@ -6,6 +6,12 @@ interface PortfolioElementProps{
     title: string,
     description: string,
     url: string,
+    technologies: Array<PortfolioElementPropTechnology>,
+}
+
+interface PortfolioElementPropTechnology{
+    id: number,
+    name: string,
 }
 
 export default class PortfolioElement extends React.Component<PortfolioElementProps>{
@@ -14,6 +20,13 @@ export default class PortfolioElement extends React.Component<PortfolioElementPr
     }
 
     render(){
+        var technologies:string = "";
+
+        for(var i=0 ; i<this.props.technologies.length ; i++){
+            let technology = this.props.technologies[i];
+            technologies += technology.name + (i<this.props.technologies.length-1?", ":" ");
+        }
+
         return (
             <div className="portfolioElement">
                 <div className="portfolioElementThumbnail">
@@ -27,7 +40,7 @@ export default class PortfolioElement extends React.Component<PortfolioElementPr
 
                 <p>{this.props.description}</p>
 
-                <p className="portfolioElementDescription"><strong>Technologies</strong>: </p>
+                <p className="portfolioElementDescription"><strong>Technologies</strong>: {technologies}</p>
             </div>
         );
     }

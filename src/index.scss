@@ -105,14 +105,27 @@ body{
                         //font-family: 'Kelson Sans';
                         font-size: 12pt;
                         text-decoration: none;
-                        transition:all 0.4s;
+                        // transition:color 0.4s;
                         display: inline-block;
                         text-transform: uppercase;
                         letter-spacing: 1px;
+                        padding:5px 10px;
                 
                         &:hover{
-                            color:$cyan ;
+                            color:$cyan;
+                            transition:color 0s;
                         }
+                        
+                        // &:active{
+                        //     background-color:$cyan;
+                        //     color: $medium-gray;
+                        // }
+
+                        &.active{
+                            background-color:$cyan;
+                            color: #474747;
+                        }
+                        
                     }
                 }
             }

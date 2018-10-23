@@ -18,11 +18,11 @@ interface PortfolioProps{
 }
 
 interface PortfolioState{
-    elements:Array<any>
     filters: {
         categories:Array<any>,
         technologies:Array<any>,
     },
+    elements:Array<any>,
     toggleFilters:boolean,
 }
 
@@ -33,11 +33,11 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
         this.toggleFilters = this.toggleFilters.bind(this);
 
         this.state = {
-            elements:[],
             filters: {
-                categories:[],
-                technologies:[],
+                categories:this.props.filters.categories,
+                technologies:this.props.filters.technologies,
             },
+            elements:this.props.elements,
             toggleFilters: true,
         }
 
@@ -59,6 +59,24 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
         });
     }
 
+    updateFiltersCategories = (event:React.ChangeEvent<HTMLInputElement>,id:number) => {
+        console.log("a");
+        for(let i=0 ; i<this.state.filters.categories.length ; i++){
+            if(this.state.filters.categories[i].id == id){
+                this.state.filters.categories.splice(i,1);
+                event.target.checked = false;
+                return;
+            }
+        }
+    }
+
+    updateFiltersTechnologies(id:number){
+        console.log("technologies");
+        console.log(id);
+
+
+    }
+
     render(){
         const elements:Array<Object> = [];
         const categoriesFilters:Array<Object> = [];
@@ -70,19 +88,36 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
                 <PortfolioElement 
                 title={element.title} 
                 description={element.description} 
-                url={element.url} 
+                url={element.url}
+                technologies={element.technologies}
                 key={key++}/> 
             );
         }
 
         key = 0;
         for (let filter of this.state.filters.categories) {
-            categoriesFilters.push( <PortfolioFilter name={filter.name} key={key++}/> );
+            categoriesFilters.push( 
+                <PortfolioFilter 
+                id={filter.id} 
+                name={filter.name} 
+                activeFilters={this.state.filters.categories} 
+                toggleActive={this.updateFiltersCategories}
+                key={key++} 
+                />
+            );
         }
 
         key = 0;
         for (let filter of this.state.filters.technologies) {
-            technologiesFilters.push( <PortfolioFilter name={filter.name} key={key++}/> );
+            technologiesFilters.push( 
+                <PortfolioFilter 
+                id={filter.id} 
+                name={filter.name} 
+                activeFilters={this.state.filters.technologies} 
+                toggleActive={this.updateFiltersTechnologies}
+                key={key++} 
+                /> 
+            );
         }
 
         var filtersContainer = (
@@ -101,7 +136,7 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
             <div className="portfolio">
                 <h1>Portfolio</h1>
 
-                <button onClick={this.toggleFilters}>Toggle filters</button>
+                {/* <button onClick={this.toggleFilters}>Toggle filters</button> */}
                 
                 <Row>
                     {this.state.toggleFilters ? filtersContainer : null}
