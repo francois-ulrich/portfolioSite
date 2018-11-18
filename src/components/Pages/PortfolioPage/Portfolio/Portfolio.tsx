@@ -174,6 +174,7 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
                     title={element.title} 
                     description={element.description} 
                     url={element.url}
+                    imgUrl={element.imgUrl}
                     technologies={element.technologies}
                     key={key++}/> 
                 );

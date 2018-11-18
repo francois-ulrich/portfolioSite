@@ -1,26 +1,137 @@
 [
     {
-        "title": "Developpement",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras",
+        "title": "PG Tech",
+        "imgUrl": "pgtech.jpg",
+        "description": "Intégration et développement d'un site vitrine présentant les services de la société PG Tech, spécialisée dans la vente et l’installation de systèmes de surveillance.",
+        "url": "https://www.pgtech.fr/",
+        "technologies": [
+            {"id":1,"name":"HTML"},
+            {"id":2,"name":"CSS"},
+            {"id":4,"name":"LESS"},
+            {"id":6,"name":"JavaScript"},
+            {"id":8,"name":"JQuery"},
+            {"id":11,"name":"PHP"}
+            
+        ],
+        "category_id":2
+    },
+
+    {
+        "title": "Kauri Design",
+        "imgUrl": "kauri.jpg",
+        "description": "Intégration et développement d'un site vitrine de vente de tables en bois de Kauri.",
+        "url": "https://www.kauri-design.com/",
+        "technologies": [
+            {"id":1,"name":"HTML"},
+            {"id":2,"name":"CSS"},
+            {"id":6,"name":"JavaScript"},
+            {"id":8,"name":"JQuery"},
+            {"id":11,"name":"PHP"}
+        ],
+        "category_id":2
+    },
+
+    {
+        "title": "Lukai",
+        "imgUrl": "lukai.jpg",
+        "description": "Intégration et développement d'un site e-commerce de vente de matériel de salle de bain.",
+        "url": "https://www.lukai.fr/",
+        "technologies": [
+            {"id":1,"name":"HTML"},
+            {"id":2,"name":"CSS"},
+            {"id":6,"name":"JavaScript"},
+            {"id":8,"name":"JQuery"},
+            {"id":11,"name":"PHP"}
+        ],
+        "category_id":2
+    },
+
+    {
+        "title": "TooWhisp",
+        "imgUrl": "toowhisp.jpg",
+        "description": "Intégration de site vitrine pour l'application mobile TooWhisp développée par Atiweb.",
         "url": "https://corporate.toowhisp.fr/",
         "technologies": [
             {"id":1,"name":"HTML"},
             {"id":2,"name":"CSS"},
-            {"id":3,"name":"SASS"},
-            {"id":4,"name":"LESS"}
+            {"id":6,"name":"JavaScript"},
+            {"id":8,"name":"JQuery"},
+            {"id":11,"name":"PHP"}
+        ],
+        "category_id":2
+    },
+    
+    {
+        "title": "MyFlotte",
+        "imgUrl": "myflotte.jpg",
+        "description": "Développement de modules pour un logiciel de gestion de flotte de taxi.",
+        "url": "https://www.myflotte.com/",
+        "technologies": [
+            {"id":1,"name":"HTML"},
+            {"id":2,"name":"CSS"},
+            {"id":5,"name":"Bootstrap"},
+            {"id":6,"name":"JavaScript"},
+            {"id":8,"name":"JQuery"},
+            {"id":10,"name":"Google APIs"},
+            {"id":11,"name":"PHP"},
+            {"id":12,"name":"Laravel"}
         ],
         "category_id":1
     },
+    
     {
-        "title": "Integration",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras",
-        "url": "https://corporate.toowhisp.fr/",
+        "title": "Magnétiseur Cécilia",
+        "imgUrl": "cecilia.jpg",
+        "description": "Intégration Wordpress pour un site vitrine.",
+        "url": "https://www.magnetiseur-cecilia.com/",
         "technologies": [
-            {"id":5,"name":"Bootstrap"},
+            {"id":1,"name":"HTML"},
+            {"id":2,"name":"CSS"},
             {"id":6,"name":"JavaScript"},
-            {"id":7,"name":"TypeScript"},
-            {"id":8,"name":"JQuery"}
+            {"id":8,"name":"JQuery"},
+            {"id":12,"name":"Wordpress"}
         ],
         "category_id":2
+    },
+
+    {
+        "title": "Communauté Bouddhiste d'Alsace",
+        "imgUrl": "cba.jpg",
+        "description": "Intégration Wordpress pour un site vitrine.",
+        "url": "http://cb-alsace.org/",
+        "technologies": [
+            {"id":1,"name":"HTML"},
+            {"id":2,"name":"CSS"},
+            {"id":6,"name":"JavaScript"},
+            {"id":8,"name":"JQuery"},
+            {"id":12,"name":"Wordpress"}
+        ],
+        "category_id":2
+    },
+    
+    {
+        "title": "Go2",
+        "imgUrl": "go2.jpg",
+        "description": "Intégration Wordpress pour un site vitrine.",
+        "url": "https://www.go2france.eu/",
+        "technologies": [
+            {"id":1,"name":"HTML"},
+            {"id":2,"name":"CSS"},
+            {"id":6,"name":"JavaScript"},
+            {"id":8,"name":"JQuery"},
+            {"id":12,"name":"Wordpress"}
+        ],
+        "category_id":2
+    },
+
+    {
+        "title": "Blood & Guts",
+        "imgUrl": "bloodnguts.jpg",
+        "description": "Création et animation de sprites de personnages et d'éléments de décor pour un jeu codé en JavaScript avec Jeremie Metter-Rothan",
+        "url": "https://projects.metter-rothan.fr/bng/",
+        "technologies": [
+            {"id":16,"name":"Photoshop"}
+        ],
+        "category_id":3
     }
 ]

@@ -1,11 +1,10 @@
 import * as React from "react";
 
-var imgToowhisp = require("./img/toowhisp.jpg");
-
 interface PortfolioElementProps{
     title: string,
     description: string,
     url: string,
+    imgUrl: string,
     technologies: Array<PortfolioElementPropTechnology>,
 }
 
@@ -21,6 +20,7 @@ export default class PortfolioElement extends React.Component<PortfolioElementPr
 
     render(){
         var technologies:string = "";
+        var image = require("./img/" + this.props.imgUrl);
 
         for(var i=0 ; i<this.props.technologies.length ; i++){
             let technology = this.props.technologies[i];
@@ -31,9 +31,9 @@ export default class PortfolioElement extends React.Component<PortfolioElementPr
             <div className="portfolioElement">
                 <div className="portfolioElementThumbnail">
                     <div className="portfolioElementThumbnailImageContainer">
-                        <img src={imgToowhisp}/>
+                        <img src={image}/>
                     </div>
-                    <a className="portfolioElementLink" href={this.props.url} target="_blank">Voir le site</a>
+                    <a className="portfolioElementLink" href={this.props.url} target="_blank">Voir la réalisation</a>
                 </div>
 
                 <h2>{this.props.title}</h2>

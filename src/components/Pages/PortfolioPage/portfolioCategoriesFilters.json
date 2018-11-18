@@ -6,5 +6,9 @@
     {
         "id":2,
         "name":"Intégration"
+    },
+    {
+        "id":3,
+        "name":"Autre"
     }
 ]
