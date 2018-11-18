@@ -50,33 +50,15 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
             // If currentCategory.id is the ID of the clicked filter
             if(currentCategory.id == id){
                 filterIndex = i;
-
-                // let newCategoriesList = JSON.parse(JSON.stringify( this.state.filters.categories ));
-
-                // this.setState((current:any) => ({
-                //     ...current,
-                //     current:{
-                //         filters:{
-                //             categories: newCategoriesList,
-                //         }
-                //     }
-                // }));
-
-
-                //event.target.checked = false;
                 break;
             }
         }
-
-        //console.log("filterIndex: " + filterIndex);
 
         let newCategoriesList = JSON.parse(JSON.stringify( this.state.filters.categories ));
 
         if(filterIndex!=null){
             console.log("remove: " + filterIndex);
             newCategoriesList.splice(filterIndex,1);
-
-            //console.log( JSON.stringify( newCategoriesList ) );
 
             this.setState({
                 filters: {
@@ -92,7 +74,7 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
                 
                 if(categoryToAdd.id == id){
                     newCategoriesList.push(categoryToAdd);
-                    
+
                     this.setState({
                         filters: {
                             ...this.state.filters,
@@ -107,53 +89,54 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
     }
 
     updateFiltersTechnologies = (event:React.ChangeEvent<HTMLInputElement>,id:number) => {
-        /*
-        var filterIndex:number;
+        var filterIndex:number = null;
 
         // Search for filter
         for(let i=0 ; i<this.state.filters.technologies.length ; i++){
-            let currentTechnology = this.state.filters.technologies[i];
-
+            let currentCategory = this.state.filters.technologies[i];
             // If currentCategory.id is the ID of the clicked filter
-            if(currentTechnology.id == id){
-                filterIndex = id;
-
-                this.setState((current:any) => ({ ...current, 
-                    filters:{
-                        technologies: [...this.state.filters.technologies.splice(i,1)],
-                    }
-                }));
-
-
-                //this.state.filters.technologies.splice(i,1);
-                event.target.checked = false;
+            if(currentCategory.id == id){
+                filterIndex = i;
                 break;
             }
         }
 
-        if(filterIndex){
-            // Delete if in list
-            this.state.filters.technologies.splice(filterIndex,1);
+        let newTechnologiesList = JSON.parse(JSON.stringify( this.state.filters.technologies ));
+
+        if(filterIndex!=null){
+            console.log("remove: " + filterIndex);
+            newTechnologiesList.splice(filterIndex,1);
+
+            this.setState({
+                filters: {
+                    ...this.state.filters,
+                    technologies: newTechnologiesList,
+                },
+            });
         }else{
+            console.log("add");
             // Add if not in list
             for(let i=0 ; i<this.props.filters.technologies.length ; i++){
-                let categoryToAdd = this.props.filters.technologies[i];
+                let technologyToAdd = this.props.filters.technologies[i];
                 
-                if(categoryToAdd.id == id){
-                    this.state.filters.technologies.push(categoryToAdd);
+                if(technologyToAdd.id == id){
+                    newTechnologiesList.push(technologyToAdd);
+
+                    this.setState({
+                        filters: {
+                            ...this.state.filters,
+                            technologies: newTechnologiesList,
+                        },
+                    });
+        
                     break;
                 }
             }
         }
-
-        //console.log( JSON.stringify(this.state.filters.technologies) );
-        */
     }
 
     render(){
         console.log("render");
-        console.log(JSON.stringify(this.state.filters.categories));
-
         const elements:Array<Object> = [];
         const categoriesFilters:Array<Object> = [];
         const technologiesFilters:Array<Object> = [];
@@ -162,8 +145,8 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
         let key = 0;
 
         for (let element of this.props.elements) {
-
-            var inActiveCategories = false;
+            var inActiveCategories = false,
+            inActiveTechnologies = false;
 
             //Check if element is in the list of active categories
             for(let category of this.state.filters.categories){
@@ -173,18 +156,29 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
                 }
             }
 
-            if (!inActiveCategories) {
-                continue;
+            //Check if element is in the list of active technologies
+            for(let technologiesFilter of this.state.filters.technologies){
+                for(let elementTechnology of element.technologies){
+                    if(technologiesFilter.id == elementTechnology.id){
+                        inActiveTechnologies = true;
+                        break;
+                    }
+                }
             }
 
-            elements.push( 
-                <PortfolioElement 
-                title={element.title} 
-                description={element.description} 
-                url={element.url}
-                technologies={element.technologies}
-                key={key++}/> 
-            );
+            // If the element is not filtered
+            if (inActiveCategories || inActiveTechnologies) {
+                // Push the element into the list
+                elements.push( 
+                    <PortfolioElement 
+                    title={element.title} 
+                    description={element.description} 
+                    url={element.url}
+                    technologies={element.technologies}
+                    key={key++}/> 
+                );
+            }
+
         }
 
         // List of categories filters
