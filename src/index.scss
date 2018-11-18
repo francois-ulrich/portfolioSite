@@ -115,11 +115,6 @@ body{
                             color:$cyan;
                             transition:color 0s;
                         }
-                        
-                        // &:active{
-                        //     background-color:$cyan;
-                        //     color: $medium-gray;
-                        // }
 
                         &.active{
                             background-color:$cyan;

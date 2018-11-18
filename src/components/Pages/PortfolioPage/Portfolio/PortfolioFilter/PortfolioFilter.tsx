@@ -21,31 +21,22 @@ export default class PortfolioFilter extends React.Component<PortfolioFilterProp
             active: true,
         }
     }
-
-    /*
-    toggleActive(e:React.ChangeEvent<HTMLInputElement>){
+    
+    handleClick = (event:React.ChangeEvent<HTMLInputElement>) => {
+        // We toggle the active state of the filter
         
         this.setState({
-            active: e.target.checked,
+            active: !this.state.active,
         });
-        
-    }
-    */
 
-    /*
-    handleClick(){
-        console.log(this.props.id);
-        this.props.toggleActive(this.props.id);
+        // Call to parent function
+        this.props.toggleActive(event,this.props.id);
     }
-    */
+    
 
-    handleClick = (event:React.ChangeEvent<HTMLInputElement>) => {
-        this.props.toggleActive(event, this.props.id)
-    }
-
-    isInActiveFilters(){
+    isInActiveFilters():boolean{
         for(var i=0;i<this.props.activeFilters.length;i++){
-            if(this.props.activeFilters[i].name === this.props.name){
+            if(this.props.activeFilters[i].id == this.props.id){
                 return true;
             }
         }

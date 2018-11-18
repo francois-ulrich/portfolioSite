@@ -1,6 +1,6 @@
 [
     {
-        "title": "Titre de la réalisation 1",
+        "title": "Developpement",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras",
         "url": "https://corporate.toowhisp.fr/",
         "technologies": [
@@ -12,7 +12,7 @@
         "category_id":1
     },
     {
-        "title": "Titre de la réalisation 2",
+        "title": "Integration",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras",
         "url": "https://corporate.toowhisp.fr/",
         "technologies": [
