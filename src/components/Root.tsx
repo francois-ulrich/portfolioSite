@@ -17,8 +17,8 @@ export default class Root extends React.Component{
                         <Header/>
                         <Container className="websiteContainer">
                             <Switch>
-                                <Route path="/" component={PortfolioPage} />
-                                <Route path="/portfolio" component={Home} />
+                                <Route path="/" component={Home} />
+                                <Route path="/portfolio" component={PortfolioPage} />
                                 <Route component={PageNotFound} />
                             </Switch>
                         </Container>
@@ -28,5 +28,3 @@ export default class Root extends React.Component{
         );
     }
 }
-
-// <Redirect to="/a-propos"/>

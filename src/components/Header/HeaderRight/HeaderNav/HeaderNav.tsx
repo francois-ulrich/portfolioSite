@@ -6,7 +6,6 @@ export default class HeaderNav extends React.Component {
         return (
             <nav className="headerNav">
                 <NavLink to="/">À propos</NavLink>
-                <NavLink to="/parcours">Parcours</NavLink>
                 <NavLink to="/portfolio">Portfolio</NavLink>
             </nav>
         );

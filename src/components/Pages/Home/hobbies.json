@@ -1,0 +1,52 @@
+[
+    {
+        "id":"gamedev",
+        "description":"Développement de jeux vidéo avec Game Maker Studio",
+        "backgroundColor":null,
+        "animationImages" : [
+            {"src":"gamedev1.png"},
+            {"src":"gamedev2.png"},
+            {"src":"gamedev3.png"},
+            {"src":"gamedev4.png"}
+        ]
+    },
+    {
+        "id":"drawing",
+        "description":"Dessin",
+        "backgroundColor":"#CCC",
+        "animationImages" : [
+            {"src":"drawing1.png"}
+        ]
+    },
+    {
+        "id":"animation",
+        "description":"Animation 2d, motion design",
+        "backgroundColor":null,
+        "animationImages" : [
+            {"src":"animation.png"},
+            {"src":"animation.gif"}
+        ]
+    },
+
+    {
+        "id":"games",
+        "description":"Jeux vidéo",
+        "backgroundColor":"#569eff",
+        "animationImages" : [
+            {"src":"games1.png"},
+            {"src":"games2.png"},
+            {"src":"games3.gif"},
+            {"src":"games4.gif"}
+        ]
+    },
+
+    {
+        "id":"series",
+        "description":"Séries, cinéma",
+        "backgroundColor":"darkred",
+        "animationImages" : [
+            {"src":"series1.png"},
+            {"src":"series2.png"}
+        ]
+    }
+]

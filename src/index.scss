@@ -5,6 +5,8 @@ $medium-gray : #474747;
 $white : #eaeaea;
 $cyan : #00ffcc;
 
+$portfolioElementLinkWidth: 185px;
+
 
 body{
     font-family: 'Kelson Sans';
@@ -125,6 +127,206 @@ body{
                 }
             }
         }
+
+        .home{
+            .homeProfileImage{
+                width: 100%;
+            }
+
+            .hobby{
+                .hobbyFrame{
+                    &:hover{
+                        /*BLOC 1*/
+                        @keyframes gamedev1{
+                            0% {left: -64px; opacity:0;}
+                            25% {left: 0px; opacity:1;}
+                        }
+
+                        @keyframes gamedev2{
+                            0% {left: 64px; opacity:0;}
+                            25% {left: 64px; opacity:0;}
+                            50% {left: 0px; opacity:1;}
+                        }
+
+                        @keyframes gamedev3{
+                            0% {top: -64px; opacity:0;}
+                            50% {top: -64px; opacity:0;}
+                            75% {top: 0px; opacity:1;}
+                        }
+
+                        @keyframes gamedev4{
+                            0% {top: 64px; opacity:0;}
+                            75% {top: 64px; opacity:0;}
+                            100% {top: 0px; opacity:1;}
+                        }
+
+                        img.gamedev1{
+                            animation-name: gamedev1;
+                            animation-duration: 1s;
+                        }
+
+                        img.gamedev2{
+                            animation-name: gamedev2;
+                            animation-duration: 1s;
+                        }
+
+                        img.gamedev3{
+                            animation-name: gamedev3;
+                            animation-duration: 1s;
+                        }
+
+                        img.gamedev4{
+                            animation-name: gamedev4;
+                            animation-duration: 1s;
+                        }
+
+
+                        /*BLOC 2*/
+                        @keyframes series1 {
+                            0% {
+                                transform: rotate(0deg);
+                            }
+
+                            100% {
+                                transform: rotate(360deg);
+                            }
+                        }
+
+                        .series1{
+                            animation-name: series1;
+                            animation-iteration-count: infinite;
+                            animation-duration: 1s;
+                        }
+
+                        /*BLOC 3*/
+                        @keyframes drawing1 {
+                            0% {left: -49px;}
+                            100% {left: 0px;}
+                        }
+
+                        .interet_bloc_dessin:hover .drawing1{
+                            animation-name: drawing1;
+                            animation-duration: 0.5s;
+                        }
+
+                        /*BLOC 3*/
+                        @keyframes drawing1 {
+                            0% {left: -49px;}
+                            100% {left: 0px;}
+                        }
+
+                        .drawing1{
+                            animation-name: drawing1;
+                            animation-duration: 0.5s;
+                        }
+
+                        /*BLOC 4*/
+                        @keyframes games1 {
+                            0% {left: 0px;}
+                            100% {left: -64px;}
+                        }
+
+                        @keyframes games3 {
+                            0% {left: 64px;}
+                            100% {left: 36px;}
+                        }
+
+                        @keyframes games4 {
+                            0% {left: 0px;}
+                            100% {left: -64px;}
+                        }
+
+                        .games1{
+                            animation-name: games1;
+                            animation-duration: 1s;
+                            animation-iteration-count: infinite;
+                            animation-timing-function: linear;
+                        }
+
+                        .games2{
+                            display:block;
+                        }
+
+                        .games3{
+                            display:none;
+                        }
+
+                        .games2{
+                            display:none;
+                        }
+
+                        .games3{
+                            display:block;
+                        }
+
+                        .games4{
+                            display:none;
+                        }
+
+                        .games4{
+                            display:block;
+                            animation-name: games3;
+                            animation-duration: 0.4s;
+                            animation-iteration-count: infinite;
+                            animation-timing-function: linear;
+                        }
+
+                        .animation2{
+                            display:block;
+                        }
+                    }
+
+                    .games3{
+                        display:none;
+
+                    }
+
+                    .games4{
+                        display:none;
+                        top:36px;
+                    }
+
+                    .animation1, .animation2{
+                        width:auto;
+                        height:68px;
+                        position:absolute;
+                        left:-15px;
+                        transform: scaleX(-1);
+                        filter: contrast(-200%);
+                    }
+
+                    .animation2{
+                        display:none;
+                    }
+
+                    img{
+                        position:absolute;
+                        image-rendering: unset;
+                        left:0px;
+                        top:0px;
+                    }
+
+                    width: 64px;
+                    height: 64px;
+                    border-radius: 4px;
+                    position: relative;
+                    overflow: hidden;
+                    background-color: black;
+                }
+
+                >span{
+                    margin: 10px;
+                    text-align:center;
+                    font-size: 13px;
+                }
+
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 16px;
+            }
+        }
     
         .portfolio{
             // Filters
@@ -170,8 +372,9 @@ body{
 
                 .portfolioElement{
                     width: 33%;
-                    display: inline-block;
+                    display: block;
                     padding: 0px 20px 20px 0px;
+                    float: left;
 
                     // Lign below block
                     &::after{
@@ -182,6 +385,10 @@ body{
                         width:60%;
                         margin: 0 20%;
                         transition: all 0.4s;
+                    }
+
+                    &>.portfolioElementText{
+                        height: 200px;
                     }
 
                     &>.portfolioElementThumbnail{
@@ -217,9 +424,10 @@ body{
                             padding: 10px;
                             position: absolute;
                             top: 60%;
-                            left: calc(50% - 60px);
+                            left: calc(50% - 90px);
                             opacity:0;
                             transition: all 0.6s;
+                            width: $portfolioElementLinkWidth;
 
                             &:hover{
                                 color: black;

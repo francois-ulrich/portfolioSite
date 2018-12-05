@@ -3,7 +3,6 @@ import {Row, Col} from 'reactstrap';
 
 import PortfolioElement from "./PortfolioElement/PortfolioElement";
 import PortfolioFilter from "./PortfolioFilter/PortfolioFilter";
-import { cpus } from "os";
 
 interface PortfolioProps{
     filters: {
@@ -136,7 +135,6 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
     }
 
     render(){
-        console.log("render");
         const elements:Array<Object> = [];
         const categoriesFilters:Array<Object> = [];
         const technologiesFilters:Array<Object> = [];
@@ -167,7 +165,7 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
             }
 
             // If the element is not filtered
-            if (inActiveCategories || inActiveTechnologies) {
+            if (inActiveCategories && inActiveTechnologies) {
                 // Push the element into the list
                 elements.push( 
                     <PortfolioElement 
