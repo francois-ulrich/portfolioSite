@@ -4,7 +4,7 @@ import {BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 import Header from "./Header/Header";
 
-import Home from "./Pages/Home/Home";
+import HomePage from "./Pages/HomePage/HomePage";
 import PortfolioPage from "./Pages/PortfolioPage/PortfolioPage";
 import PageNotFound from "./Pages/PageNotFound/PageNotFound";
 
@@ -17,7 +17,7 @@ export default class Root extends React.Component{
                         <Header/>
                         <Container className="websiteContainer">
                             <Switch>
-                                <Route path="/" component={Home} />
+                                <Route path="/" component={HomePage} />
                                 <Route path="/portfolio" component={PortfolioPage} />
                                 <Route component={PageNotFound} />
                             </Switch>

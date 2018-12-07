@@ -5,9 +5,10 @@ import Hobbies from "./Hobbies/Hobbies";
 import WorkExperiences from "./WorkExperiences/WorkExperiences";
 
 const hobbiesJson = require("./hobbies.json")
+const workExperiencesJson = require("./workExperiences.json")
 const imgProfile = require("../../../img/francois-ulrich.jpg");
 
-export default class Home extends React.Component{
+export default class HomePage extends React.Component{
     render(){
         return (
             <div className="home">
@@ -62,7 +63,7 @@ export default class Home extends React.Component{
                     </Col>
                 </Row>
 
-                <WorkExperiences workExperiences={hobbiesJson}/>
+                <WorkExperiences workExperiences={workExperiencesJson}/>
 
                 <Hobbies hobbies={hobbiesJson}/>
             </div>

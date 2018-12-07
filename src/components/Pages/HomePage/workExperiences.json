@@ -1,19 +1,27 @@
 [
     {
+        "company": "Test",
+        "jobTitle": "Développeur / intégrateur de solutions internet",
+        "dateStart": "2018-03",
+        "dateEnd": null,
+        "location": "test",
+        "descriptionHtml": "description"
+    },
+    {
         "company": "Atiweb",
         "jobTitle": "Développeur / intégrateur de solutions internet",
         "dateStart": "2018-03",
         "dateEnd": "2018-08",
         "location": "Haguenau, Alsace",
-        "descriptionHtml": ""
+        "descriptionHtml": "description"
     },
     {
         "company": "AZ Conception",
-        "jobTitle": "Analyste développeur",
+        "jobTitle": "Alternance",
         "dateStart": "2016-04",
         "dateEnd": "2017-09",
         "location": "Strasbourg",
-        "descriptionHtml": ""
+        "descriptionHtml": "description"
     }
 ]
 
