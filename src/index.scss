@@ -21,7 +21,34 @@ body{
     }
 
     h2{
+        &:before{
+            transform: rotate(180deg);
+            position: absolute;
+            width: 12px;
+            top: -6px;
+            left: auto;
+            margin-left: -18px;
+            content:url("./img/headerShardCyan.svg");
+        }
+
+        &:after{
+            position: absolute;
+            width: 12px;
+            top: 0px;
+            right: auto;
+            margin-left: 6px;
+            content:url("./img/headerShardCyan.svg");
+        }
+
         font-size:24px;
+        background-color: $cyan;
+        display: inline-block;
+        color: $darker-gray;
+        padding: 4px 6px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin: 0px 12px;
+        margin-bottom: 40px;
     }
 
     p{
@@ -325,6 +352,17 @@ body{
                 justify-content: center;
                 align-items: center;
                 padding: 16px;
+            }
+
+            .workExperiences{
+                .workExperience{
+                    .workExperienceDate{
+                        &::first-letter{
+                            text-transform: capitalize;
+                        }
+                    }
+                    padding-bottom: 32px;
+                }
             }
         }
     

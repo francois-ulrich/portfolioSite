@@ -1,6 +1,5 @@
 import * as React from "react";
 import {Row, Col} from 'reactstrap';
-import Moment from 'react-moment';
 
 import WorkExperienceDate from './WorkExperienceDate/WorkExperienceDate';
 
@@ -42,12 +41,12 @@ export default class WorkExperience extends React.Component<WorkExperienceProps,
                 <br/>
                 <br/>
 
-                <span>En cours</span>
+                <span>en cours</span>
             </div>
         );
         
         return(
-            <Row>
+            <Row className="workExperience">
                 <Col md={3} className="workExperienceDate">
                     {dateText}
                 </Col>

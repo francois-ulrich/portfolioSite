@@ -29,7 +29,7 @@ export default class WorkExperiences extends React.Component<WorkExperiencesProp
         });
 
         return (
-            <div>
+            <div className="workExperiences">
                 <Row>
                     <Col md="12">
                         <h2>Expériences professionnelles</h2>

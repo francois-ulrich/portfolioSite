@@ -5,7 +5,7 @@
         "dateStart": "2018-03",
         "dateEnd": null,
         "location": "test",
-        "descriptionHtml": "description"
+        "descriptionHtml": "<p>description</p>"
     },
     {
         "company": "Atiweb",
@@ -13,7 +13,7 @@
         "dateStart": "2018-03",
         "dateEnd": "2018-08",
         "location": "Haguenau, Alsace",
-        "descriptionHtml": "description"
+        "descriptionHtml": "<p>description</p>"
     },
     {
         "company": "AZ Conception",
@@ -21,7 +21,7 @@
         "dateStart": "2016-04",
         "dateEnd": "2017-09",
         "location": "Strasbourg",
-        "descriptionHtml": "description"
+        "descriptionHtml": "<p>Développement de fonctionnalités pour MyFlotte, logiciel de gestion de flotte de taxis:<br/>- - Création d'IHM<br/>- - Recueil de besoins<br/>- Intégration de contenu, HTML / CSS / JS<br/>Stage de fin de DUT MMI: Avril à fin Juin 2016<br/>CDD mois de Juillet 2016<br/>Alternance: Septembre 2016 à Octobre 2017<br/></p>"
     }
 ]
 

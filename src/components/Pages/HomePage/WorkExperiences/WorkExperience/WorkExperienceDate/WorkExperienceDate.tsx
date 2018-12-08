@@ -12,7 +12,9 @@ export default class WorkExperienceDate  extends React.Component<WorkExperienceD
 
     render(){
         return(
-            <Moment locale="fr" format="MMM YYYY">{this.props.value}</Moment>
+            <span className="workExperienceDate">
+                <Moment locale="fr" format="MMM YYYY">{this.props.value}</Moment>
+            </span>
         );
     }
 }
