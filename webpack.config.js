@@ -97,5 +97,8 @@ module.exports = {
             filename: './index.html' //relative to root of the application
         }),
         new ExtractTextPlugin('index.css'),
-    ]
+    ],
+    node: {
+        fs: "empty"
+    }
 };

@@ -1,19 +1,11 @@
 [
     {
-        "company": "Test",
-        "jobTitle": "Développeur / intégrateur de solutions internet",
-        "dateStart": "2018-03",
-        "dateEnd": null,
-        "location": "test",
-        "descriptionHtml": "<p>description</p>"
-    },
-    {
         "company": "Atiweb",
         "jobTitle": "Développeur / intégrateur de solutions internet",
         "dateStart": "2018-03",
         "dateEnd": "2018-08",
-        "location": "Haguenau, Alsace",
-        "descriptionHtml": "<p>description</p>"
+        "location": "Haguenau, Bas-Rhin",
+        "descriptionHtml": "<p>- Intégration de sites vitrines et e-commerces (CMS Atiweb, JQuery, HTML/CSS)<br/> - Développements de fonctionnalités pour le CMS Atiweb (PHP)<br/> - Mise en conformité de sites vitrine et e-commerces au RGPD<br/> - Intégration de newsletters<br/> - Mise en place de nouvelles fonctionnalités diverses sur des sites existants<br/> - Création de scripts d’import de données en PHP<br/></p>"
     },
     {
         "company": "AZ Conception",
@@ -21,7 +13,7 @@
         "dateStart": "2016-04",
         "dateEnd": "2017-09",
         "location": "Strasbourg",
-        "descriptionHtml": "<p>Développement de fonctionnalités pour MyFlotte, logiciel de gestion de flotte de taxis:<br/>- - Création d'IHM<br/>- - Recueil de besoins<br/>- Intégration de contenu, HTML / CSS / JS<br/>Stage de fin de DUT MMI: Avril à fin Juin 2016<br/>CDD mois de Juillet 2016<br/>Alternance: Septembre 2016 à Octobre 2017<br/></p>"
+        "descriptionHtml": "<p>Développement PHP / Laravel pour MyFlotte, logiciel de gestion de flotte de taxis:<br/> - Création et maintenance de modules de gestion<br/> - Création d'IHM (Bootstrap, JQuery )<br/> - Tâches Cron<br/> - Système multilingue<br/> - Recueil de besoins<br/> <br/> Création de sites vitrines Wordpress: <br/><br/> - Intégration de contenu, HTML / CSS / JS - Réunions client<br/> <br/> Autres: - Créations de bannières animées pour site e-commerce (Photoshop)<br/> - Création de logo (Illustrator)<br/> - Détourages, retouches images...<br/></p>"
     }
 ]
 

@@ -1,0 +1,26 @@
+[
+    {
+        "company": "IUT Robert Schuman",
+        "jobTitle": "LP Concepteur Développeur en Environnement Distribué",
+        "dateStart": "2016",
+        "dateEnd": "2017",
+        "location": "Illkrich-Graffenstaden",
+        "descriptionHtml": "<p>Formation en informatique effectuée en alternance chez AZ Conception</p>"
+    },
+    {
+        "company": "IUT de Haguenau",
+        "jobTitle": "DUT Métiers du Multimédia et de l'Internet",
+        "dateStart": "2014",
+        "dateEnd": "2016",
+        "location": "Haguenau, Bas-Rhin",
+        "descriptionHtml": "<p>Formation au développement web et aux métiers de la création multimédia (communication, graphisme et audiovisuel)</p>"
+    },
+    {
+        "company": "Lycée Louis Pasteur",
+        "jobTitle": "Baccalaureat Économique et Social, option Sciences Politiques",
+        "dateStart": "2012",
+        "dateEnd": "2014",
+        "location": "Strasbourg",
+        "descriptionHtml": "<p>Obtenu</p>"
+    }
+]

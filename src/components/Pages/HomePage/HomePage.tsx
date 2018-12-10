@@ -2,10 +2,11 @@ import * as React from "react";
 import {Row, Col} from 'reactstrap';
 
 import Hobbies from "./Hobbies/Hobbies";
-import WorkExperiences from "./WorkExperiences/WorkExperiences";
+import Experiences from "./Experiences/Experiences";
 
 const hobbiesJson = require("./hobbies.json")
 const workExperiencesJson = require("./workExperiences.json")
+const educationJson = require("./education.json")
 const imgProfile = require("../../../img/francois-ulrich.jpg");
 
 export default class HomePage extends React.Component{
@@ -63,7 +64,9 @@ export default class HomePage extends React.Component{
                     </Col>
                 </Row>
 
-                <WorkExperiences workExperiences={workExperiencesJson}/>
+                <Experiences title="Expériences professionnelles" experiences={workExperiencesJson}/>
+
+                <Experiences title="Formation" experiences={educationJson}/>
 
                 <Hobbies hobbies={hobbiesJson}/>
             </div>
