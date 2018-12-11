@@ -1,0 +1,35 @@
+[
+    {
+        "title": "Langages",
+        "skills": [
+            {"title":"HTML5" , "value" : 9},
+            {"title":"CSS3" , "value" : 8},
+            {"title":"JavaScript" , "value" : 8},
+            {"title":"PHP" , "value" : 7},
+            {"title":"MySQL" , "value" : 5}
+        ]
+    },
+    {
+        "title": "Frameworks et outils",
+        "skills": [
+            {"title":"JQuery" , "value" : 8},
+            {"title":"Bootstrap" , "value" : 7.5},
+            {"title":"SASS/LESS" , "value" : 7},
+            {"title":"Laravel" , "value" : 7},
+            {"title":"Node.js" , "value" : 6},
+            {"title":"React" , "value" : 5},
+            {"title":"TypeScript" , "value" : 5},
+            {"title":"Git" , "value" : 4}
+        ]
+    },
+    {
+        "title": "Graphisme & audiovisuel",
+        "skills": [
+            {"title":"Photoshop" , "value" : 8},
+            {"title":"Illustrator" , "value" : 8},
+            {"title":"AfterEffects" , "value" : 7},
+            {"title":"Animate" , "value" : 7},
+            {"title":"Premiere" , "value" : 7}
+        ]
+    }
+]

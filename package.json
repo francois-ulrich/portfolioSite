@@ -32,7 +32,7 @@
     "stylelint": "^9.6.0",
     "stylelint-config-recommended": "^2.1.0",
     "ts-loader": "^5.2.1",
-    "typescript": "^3.1.1",
+    "typescript": "^3.3.0-dev.20181211",
     "typings-for-css-modules-loader": "^1.7.0",
     "url-loader": "^1.1.1",
     "webpack": "^4.20.2",

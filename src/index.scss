@@ -160,6 +160,24 @@ body{
                 width: 100%;
             }
 
+            .skill{
+                .skillTitle{
+                    font-size: 15px;
+                }
+                .skillBarContainer{
+                    padding: 1px;
+                    .skillBar{
+                        background-color: $cyan;
+                        height:100%;
+                    }
+
+                    border: 1px solid $cyan;
+                    height:100%;
+                }
+
+                padding: 2px 0px;
+            }
+
             .hobby{
                 .hobbyFrame{
                     &:hover{

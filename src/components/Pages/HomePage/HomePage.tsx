@@ -3,10 +3,12 @@ import {Row, Col} from 'reactstrap';
 
 import Hobbies from "./Hobbies/Hobbies";
 import Experiences from "./Experiences/Experiences";
+import Skills from "./Skills/Skills";
 
-const hobbiesJson = require("./hobbies.json")
-const workExperiencesJson = require("./workExperiences.json")
-const educationJson = require("./education.json")
+const hobbiesJson = require("./hobbies.json");
+const workExperiencesJson = require("./workExperiences.json");
+const educationJson = require("./education.json");
+const skillsJson = require("./skills.json");
 const imgProfile = require("../../../img/francois-ulrich.jpg");
 
 export default class HomePage extends React.Component{
@@ -24,45 +26,29 @@ export default class HomePage extends React.Component{
                     </Col>
                     <Col md={8}>
                         <Row>
-                            <Col md={6}>
-                                <h5>Mes compétences</h5>
+                            <Col md={12}>
+                                <h2>Compétences</h2>
 
-                                <h6>Langages</h6>
-                                <ul>
-                                    <li>HTML5</li>
-                                    <li>CSS3 / SCSS/ LESS</li>
-                                    <li>Javascript / Typescript </li>
-                                    <li>PHP</li>
-                                    <li>MySQL</li>
-                                </ul>
-
-                                <h6>Frameworks / outils</h6>
-                                <ul>
-                                    <li>Laravel</li>
-                                    <li>Bootstrap</li>
-                                    <li>jQuery</li>
-                                    <li>Wordpress</li>
-                                    <li>Node.js</li>
-                                    <li>NPM</li>
-                                    <li>Webpack</li>
-                                    <li>React</li>
-                                    <li>Git</li>
-                                </ul>
-                            </Col>
-                            <Col md={6}>
-                                <h6>Compétences additionnelles</h6>
-                                <ul>
-                                    <li>Photoshop</li>
-                                    <li>Illustrator</li>
-                                    <li>After effects</li>
-                                    <li>Animate</li>
-                                    <li>Premiere</li>
-                                    <li>Suite Office</li>
-                                </ul>
+                                <Row>
+                                    <Col md={4}>
+                                        <h5>Langages</h5>
+                                        <Skills title={ skillsJson[0].title } skills={ skillsJson[0].skills }/>
+                                    </Col>
+                                    <Col md={4}>
+                                        <h5>Frameworks et outils</h5>
+                                        <Skills title={ skillsJson[1].title } skills={ skillsJson[1].skills }/>
+                                    </Col>
+                                    <Col md={4}>
+                                        <h5>Graphisme & audiovisuel</h5>
+                                        <Skills title={ skillsJson[2].title } skills={ skillsJson[2].skills }/>
+                                    </Col>
+                                </Row>
                             </Col>
                         </Row>
                     </Col>
                 </Row>
+
+                <br />
 
                 <Experiences title="Expériences professionnelles" experiences={workExperiencesJson}/>
 
