@@ -56,6 +56,14 @@ body{
         font-weight: lighter;
         letter-spacing: 1px;
     }
+
+    a{
+        &:hover{
+            color:$cyan;
+        }
+        color: white;
+        transition: 0.4s all;
+    }
     
     #root{
         min-height:100vh;
@@ -106,6 +114,12 @@ body{
                         letter-spacing: 2px;
                         margin-left:8px;
                     }
+                }
+
+                .headerContactLinks{
+                    width: calc(100% - 250px);
+                    display: flex;
+                    justify-content: space-evenly;
                 }
             }
     

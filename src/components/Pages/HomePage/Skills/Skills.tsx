@@ -15,9 +15,11 @@ export default class Skills extends React.Component<SkillsProps>{
     }
 
     render(){
+        var key = 0;
+
         var skillsList = this.props.skills.map(function(skill:any){
             return(
-                <Skill title={ skill.title } value={ skill.value }/>
+                <Skill title={ skill.title } value={ skill.value } key={key++}/>
             );
         });
 
