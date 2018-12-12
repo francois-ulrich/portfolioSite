@@ -6,7 +6,6 @@ import Header from "./Header/Header";
 
 import HomePage from "./Pages/HomePage/HomePage";
 import PortfolioPage from "./Pages/PortfolioPage/PortfolioPage";
-import PageNotFound from "./Pages/PageNotFound/PageNotFound";
 
 export default class Root extends React.Component{
     render(){
@@ -17,9 +16,8 @@ export default class Root extends React.Component{
                         <Header/>
                         <Container className="websiteContainer">
                             <Switch>
-                                <Route path="/" component={HomePage} />
+                                <Route path="/" exact component={HomePage} />
                                 <Route path="/portfolio" component={PortfolioPage} />
-                                <Route component={PageNotFound} />
                             </Switch>
                         </Container>
                     </div>

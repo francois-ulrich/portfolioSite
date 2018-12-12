@@ -36,7 +36,7 @@ export default class PortfolioElement extends React.Component<PortfolioElementPr
                     <a className="portfolioElementLink" href={this.props.url} target="_blank">Voir la réalisation</a>
                 </div>
                 <div className="portfolioElementText">
-                    <h2>{this.props.title}</h2>
+                    <h3>{this.props.title}</h3>
 
                     <p>{this.props.description}</p>
 
