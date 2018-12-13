@@ -27,14 +27,18 @@ export default class Experience extends React.Component<ExperienceProps,Experien
 
     render(){
         var dateText = ( this.props.dateStart && this.props.dateEnd) ? (
-            <span className="experienceDateText">
-                <ExperienceDate value={this.props.dateStart}/> - <ExperienceDate value={this.props.dateEnd}/>
-            </span>
+            <div className="experienceDateTextContainer">
+                <div className="experienceDateText">
+                    <ExperienceDate value={this.props.dateStart}/> - <ExperienceDate value={this.props.dateEnd}/>
+                </div>
+            </div>
         ) : (
             <div>
-                <span className="experienceDateText">
-                    <ExperienceDate value={this.props.dateStart}/>
-                </span>
+                <div className="experienceDateTextContainer">
+                    <div className="experienceDateText">
+                        <ExperienceDate value={this.props.dateStart}/>
+                    </div>
+                </div>
 
                 <br/>
                 <br/>
@@ -45,10 +49,10 @@ export default class Experience extends React.Component<ExperienceProps,Experien
         
         return(
             <Row className="experience">
-                <Col md={3} className="experienceDate">
+                <Col xs="2" sm="4" md="3" className="experienceDate">
                     {dateText}
                 </Col>
-                <Col md={9} className="experienceText">
+                <Col xs="10" sm="8" md="9" className="experienceText">
                     <h4>{this.props.jobTitle} - {this.props.company}</h4>
 
                     <span className="experienceTextLocation">{this.props.location}</span>

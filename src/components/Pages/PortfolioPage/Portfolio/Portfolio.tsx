@@ -4,6 +4,15 @@ import {Row, Col} from 'reactstrap';
 import PortfolioElement from "./PortfolioElement/PortfolioElement";
 import PortfolioFilter from "./PortfolioFilter/PortfolioFilter";
 
+// Load fontawesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core';
+// Load logos
+import { faFilter } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faFilter,faTimes);
+
 interface PortfolioProps{
     filters: {
         categories:Array<any>,
@@ -30,7 +39,7 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
         this.state = {
             filters: JSON.parse(JSON.stringify(this.props.filters)),
             elements:this.props.elements,
-            toggleFilters: true,
+            toggleFilters: false,
         }
     }
 
@@ -56,7 +65,6 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
         let newCategoriesList = JSON.parse(JSON.stringify( this.state.filters.categories ));
 
         if(filterIndex!=null){
-            console.log("remove: " + filterIndex);
             newCategoriesList.splice(filterIndex,1);
 
             this.setState({
@@ -66,7 +74,6 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
                 },
             });
         }else{
-            console.log("add");
             // Add if not in list
             for(let i=0 ; i<this.props.filters.categories.length ; i++){
                 let categoryToAdd = this.props.filters.categories[i];
@@ -103,7 +110,6 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
         let newTechnologiesList = JSON.parse(JSON.stringify( this.state.filters.technologies ));
 
         if(filterIndex!=null){
-            console.log("remove: " + filterIndex);
             newTechnologiesList.splice(filterIndex,1);
 
             this.setState({
@@ -113,7 +119,6 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
                 },
             });
         }else{
-            console.log("add");
             // Add if not in list
             for(let i=0 ; i<this.props.filters.technologies.length ; i++){
                 let technologyToAdd = this.props.filters.technologies[i];
@@ -182,7 +187,6 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
 
         // List of categories filters
         key = 0;
-        //console.log( this.state.filters.categories.length );
         for (let filter of this.props.filters.categories) {
             categoriesFilters.push( 
                 <PortfolioFilter 
@@ -209,30 +213,38 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
             );
         }
 
-        // Filter container content
-        var filtersContainer = (
-            <Col md={2} className="portfolioFiltersContainer">
-                <h5>Catégories</h5>
-                {categoriesFilters}
-
-                <br/>
-
-                <h5>Technologies</h5>
-                {technologiesFilters}
-            </Col>
-        );
-
         return (
             <div className="portfolio">
                 <h1>Portfolio</h1>
 
-                {/* <button onClick={this.toggleFilters}>Toggle filters</button> */}
-                
                 <Row>
-                    {this.state.toggleFilters ? filtersContainer : null}
                     <Col md={this.state.toggleFilters?10:12} className="portfolioElementsContainer">
                         {elements}
                     </Col>
+
+                    <div className={"portfolioFiltersContainer" + (this.state.toggleFilters ? "" : " inactive")}>
+                        <div className="portfolioFilterButtonContainer">
+                            <div className="portfolioFilterButton" onClick={ this.toggleFilters }>
+                                {
+                                    this.state.toggleFilters 
+                                    ? <FontAwesomeIcon icon={['fas', 'times']} /> 
+                                    : <FontAwesomeIcon icon={['fas', 'filter']} />}
+                            </div>
+                        </div>
+
+                        <div className={"portfolioFiltersContainerList " + (this.state.toggleFilters ? "" : "inactive")}>
+                            <div className={"portfolioFiltersList"}>
+                                <h5>Catégories</h5>
+                                {categoriesFilters}
+
+                                <br/>
+
+                                <h5>Technologies</h5>
+                                {technologiesFilters}
+                            </div>
+                        </div>
+
+                    </div>
                 </Row>
             </div>
         );

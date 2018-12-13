@@ -21,10 +21,10 @@ export default class HomePage extends React.Component{
                     </Col>
                 </Row>
                 <Row>
-                    <Col md={4}>
+                    <Col lg={4} className="text-md-center">
                         <img src={imgProfile} className="homeProfileImage"/>
                     </Col>
-                    <Col md={8}>
+                    <Col lg={8}>
                         <Row>
                             <Col md={12}>
                                 <h2>Compétences</h2>

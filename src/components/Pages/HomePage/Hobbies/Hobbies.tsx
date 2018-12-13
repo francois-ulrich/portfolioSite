@@ -17,7 +17,7 @@ export default class Hobbies extends React.Component<HobbiesProps>{
         var me = this;
         var hobbies = this.props.hobbies.map(function(hobby:any){
             return(
-                <Col md={{ size:Math.floor( 12 / me.props.hobbies.length) , offset: key==0 ? 1 : 0 }}  key={key++}>
+                <Col xs="6" md={{ size:Math.floor( 12 / me.props.hobbies.length) , offset: key==0 ? 1 : 0 }}  key={key++}>
                     <Hobby id={hobby.id} description={hobby.description} animationImages={hobby.animationImages} backgroundColor={hobby.backgroundColor}/>
                 </Col>
             );

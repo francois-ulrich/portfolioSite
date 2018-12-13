@@ -2,22 +2,23 @@ import * as React from "react";
 import { Col } from "reactstrap";
 
 import HeaderLogo from "./HeaderLogo/HeaderLogo";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // Load fontawesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core';
-
+// Load logos
 import { faAt } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 
-const links = require("./links.json");
-
 library.add(faLinkedinIn, faGithub, faAt);
+
+// Links in header
+const links = require("./links.json");
 
 export default class HeaderLeft extends React.Component {
     render(){
         return (
-            <Col className="headerLeft d-flex align-items-center" md={4}>
+            <Col className="headerLeft d-flex align-items-center" md="7" lg="5" xl="4">
                 <HeaderLogo text="François Ulrich"/>
 
                 <div className="headerContactLinks">

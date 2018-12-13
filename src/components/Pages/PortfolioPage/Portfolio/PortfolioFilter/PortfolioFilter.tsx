@@ -15,8 +15,6 @@ export default class PortfolioFilter extends React.Component<PortfolioFilterProp
     constructor(props:PortfolioFilterProps){
         super(props);
 
-        //this.toggleActive = this.toggleActive.bind(this);
-
         this.state = {
             active: true,
         }
@@ -24,7 +22,6 @@ export default class PortfolioFilter extends React.Component<PortfolioFilterProp
     
     handleClick = (event:React.ChangeEvent<HTMLInputElement>) => {
         // We toggle the active state of the filter
-        
         this.setState({
             active: !this.state.active,
         });

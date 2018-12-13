@@ -23,6 +23,10 @@ export default class Skills extends React.Component<SkillsProps>{
             );
         });
 
-        return skillsList;
+        return (
+            <div className="skills">
+                {skillsList}
+            </div>
+        );
     }
 }
