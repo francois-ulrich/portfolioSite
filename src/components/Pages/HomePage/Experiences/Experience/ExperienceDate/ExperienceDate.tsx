@@ -17,7 +17,7 @@ export default class ExperienceDate  extends React.Component<ExperienceDateProps
             format = "MMM YYYY";
 
         return(
-            <span className="ExperienceDate">
+            <span>
                 <Moment locale="fr" format={format}>{this.props.value}</Moment>
             </span>
         );

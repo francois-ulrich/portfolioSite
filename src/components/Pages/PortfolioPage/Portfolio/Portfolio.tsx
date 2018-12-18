@@ -218,7 +218,7 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
                 <h1>Portfolio</h1>
 
                 <Row>
-                    <Col md={this.state.toggleFilters?10:12} className="portfolioElementsContainer">
+                    <Col md={this.state.toggleFilters?10:12} sm={this.state.toggleFilters?8:12} className="portfolioElementsContainer">
                         {elements}
                     </Col>
 

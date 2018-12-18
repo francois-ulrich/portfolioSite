@@ -26,10 +26,12 @@ export default class Experience extends React.Component<ExperienceProps,Experien
     }
 
     render(){
-        var dateText = ( this.props.dateStart && this.props.dateEnd) ? (
+        var dateText = ( this.props.dateStart && this.props.dateEnd && this.props.dateStart != this.props.dateEnd ) ? (
             <div className="experienceDateTextContainer">
                 <div className="experienceDateText">
-                    <ExperienceDate value={this.props.dateStart}/> - <ExperienceDate value={this.props.dateEnd}/>
+                    <ExperienceDate value={this.props.dateStart}/>
+                    <span> - </span>
+                    <ExperienceDate value={this.props.dateEnd}/>
                 </div>
             </div>
         ) : (
@@ -40,10 +42,17 @@ export default class Experience extends React.Component<ExperienceProps,Experien
                     </div>
                 </div>
 
-                <br/>
-                <br/>
+                {(this.props.dateStart != this.props.dateEnd)?(
+                    <span>
+                        <span>
+                            <br/>
+                            <br/>
+                        </span>
 
-                <span className="experienceDateExtraText">en cours</span>
+
+                        <span className="experienceDateExtraText">en cours</span>
+                    </span>
+                ):("")}
             </div>
         );
         

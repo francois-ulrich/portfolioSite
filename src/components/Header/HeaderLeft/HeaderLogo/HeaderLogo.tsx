@@ -9,7 +9,7 @@ interface Props{
 export default class HeaderLogo extends React.Component<Props> {
     render(){
         return (
-            <a className="headerLogo d-flex align-items-center">
+            <a className="headerLogo d-flex justify-content-sm-center align-items-center">
                 <img src={imgLogo} className="headerLogoImage"/>
                 <span className="headerLogoText">{this.props.text}</span>
             </a>

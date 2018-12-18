@@ -21,7 +21,7 @@ export default class HomePage extends React.Component{
                     </Col>
                 </Row>
                 <Row>
-                    <Col lg={4} className="text-md-center">
+                    <Col lg={4} className="text-center">
                         <img src={imgProfile} className="homeProfileImage"/>
                     </Col>
                     <Col lg={8}>
@@ -30,15 +30,15 @@ export default class HomePage extends React.Component{
                                 <h2>Compétences</h2>
 
                                 <Row>
-                                    <Col md={4}>
+                                    <Col sm={4}>
                                         <h5>Langages</h5>
                                         <Skills title={ skillsJson[0].title } skills={ skillsJson[0].skills }/>
                                     </Col>
-                                    <Col md={4}>
+                                    <Col sm={4}>
                                         <h5>Frameworks et outils</h5>
                                         <Skills title={ skillsJson[1].title } skills={ skillsJson[1].skills }/>
                                     </Col>
-                                    <Col md={4}>
+                                    <Col sm={4}>
                                         <h5>Graphisme & audiovisuel</h5>
                                         <Skills title={ skillsJson[2].title } skills={ skillsJson[2].skills }/>
                                     </Col>

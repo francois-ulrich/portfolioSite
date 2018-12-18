@@ -18,7 +18,7 @@ const links = require("./links.json");
 export default class HeaderLeft extends React.Component {
     render(){
         return (
-            <Col className="headerLeft d-flex align-items-center" md="7" lg="5" xl="4">
+            <Col className="headerLeft d-sm-flex align-items-center " md="7" lg="5" xl="4">
                 <HeaderLogo text="François Ulrich"/>
 
                 <div className="headerContactLinks">

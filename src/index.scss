@@ -18,6 +18,7 @@ $cyan : #00ffcc;
 $portfolioElementLinkWidth: 185px;
 
 body{
+    min-width:320px;
     font-family: 'Kelson Sans';
 
     h1{
@@ -27,6 +28,10 @@ body{
         font-weight: bold;
         letter-spacing: 5px;
         margin-bottom: 20px;
+
+        @include media-breakpoint-down(xs) {
+            font-size: 1.7rem;
+        }
     }
 
     h2{
@@ -38,6 +43,10 @@ body{
             left: auto;
             margin-left: -18px;
             content:url("./img/headerShardCyan.svg");
+
+            @include media-breakpoint-down(xs) {
+                width: 10px;
+            }
         }
 
         &:after{
@@ -47,6 +56,11 @@ body{
             right: auto;
             margin-left: 6px;
             content:url("./img/headerShardCyan.svg");
+
+            @include media-breakpoint-down(xs) {
+                width: 10px;
+                margin-left: 8px;
+            }
         }
 
         font-size:24px;
@@ -58,6 +72,12 @@ body{
         letter-spacing: 2px;
         margin: 0px 12px;
         margin-bottom: 40px;
+
+        @include media-breakpoint-down(xs) {
+            font-size: 17px;
+            letter-spacing: 0px;
+            padding: 4px 8px;
+        }
     }
 
     p{
@@ -87,7 +107,6 @@ body{
     
         header{
             background-color: $medium-gray;
-            height: 70px;
         
             &>.container{
                 background-color: $medium-darker-gray;
@@ -130,12 +149,20 @@ body{
                         letter-spacing: 2px;
                         margin-left:8px;
                     }
+
+                    @include media-breakpoint-down(xs) {
+                        width:100%;
+                    }
                 }
 
                 .headerContactLinks{
                     width: calc(100% - 250px);
                     display: flex;
                     justify-content: space-evenly;
+
+                    @include media-breakpoint-down(xs) {
+                        width:100%;
+                    }
                 }
             }
     
@@ -184,12 +211,17 @@ body{
                     }
                 }
             }
+
+            @include media-breakpoint-down(xs) {
+                // position:fixed;
+                z-index: 10;
+            }
         }
 
         .home{
             img.homeProfileImage{
                 width: 100%;
-                max-width: 350px;
+                max-width: 250px;
                 margin-bottom: 35px;
             }
 
@@ -208,6 +240,10 @@ body{
                         border: 1px solid $cyan;
                         height:24px;
                         padding: 1px;
+
+                        @include media-breakpoint-down(md) {
+                            height: 12px;
+                        }
                     }
 
                     padding: 2px 0px;
@@ -421,6 +457,34 @@ body{
 
                         .experienceDateTextContainer{
                             .experienceDateText{
+                                @include media-breakpoint-down(xs){    
+                                    position: relative;
+                                    width: 150px;
+                                    top: -24px;
+                                    left: 115%;
+                                    text-align: left;
+                                }
+
+                                display: inline-block;
+                            }
+
+                            @include media-breakpoint-down(xs) {
+                                &:before{
+                                    // Rond
+                                    content: '';
+                                    display: inline-block;
+                                    width: 30px;
+                                    height: 30px;
+                                    background-color: $cyan;
+                                    border:1px solid $cyan;
+                                    border-radius: 15px;
+                                    position: relative;
+                                    top: 9px;
+                                    left: -15px;
+                                }
+                            }
+
+                            @include media-breakpoint-up(sm) {
                                 &:after{
                                     // Rond
                                     content: '';
@@ -434,23 +498,21 @@ body{
                                     top: 9px;
                                     margin-left: 10px;
                                 }
-
-                                @include media-breakpoint-down(sm) {
-                                    // position:absolute;
+                            }
+                            
+                            @include media-breakpoint-down(sm) {
+                                &>span{
+                                    position: relative;
+                                    left: 40px;
+                                    top: -25px;
                                 }
                             }
-
-                            @include media-breakpoint-down(sm) {
-                                // position:absolute;
-
-                            }
-                        }
+                        }                            
 
                         .experienceDateExtraText{
                             margin-right:42px;
                             font-weight: lighter;
                         }
-
 
                         &:after{
                             // Ligne
@@ -464,12 +526,22 @@ body{
                             top:0;
                         }
 
+                        @include media-breakpoint-down(xs) {
+                            padding: 0;
+                        }
+
                         text-align:right;
                     }
 
-                    .experienceTextLocation{
-                        display: block;
-                        margin-bottom: 5px;
+                    .experienceText{
+                        .experienceTextLocation{
+                            display: block;
+                            margin-bottom: 5px;
+                        }
+
+                        @include media-breakpoint-down(xs) {
+                            margin-top:55px;
+                        }
                     }
 
                     &:nth-last-child(1){
@@ -565,12 +637,18 @@ body{
                 padding: 0;
                 width: calc((100% / 12)*2);
                 transition: 0.5s all;
+
+
+                @include media-breakpoint-down(md) {
+                    width: calc((100% / 12)*4);
+                }
             }
     
             // Portfolio elements
             .portfolioElementsContainer{
                 .portfolioElement{
                     width: 33%;
+                    min-width: 300px;
                     display: block;
                     padding: 0px 20px 20px 0px;
                     float: left;
