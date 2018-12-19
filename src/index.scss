@@ -101,8 +101,8 @@ body{
         .websiteContainer{
             background-color: $dark-gray;
             color:$white;
-            padding-top: 70px;
-            padding-bottom: 70px;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
     
         header{
@@ -562,8 +562,28 @@ body{
         }
     
         .portfolio{
+            .portfolioFilterButton{
+                color: $cyan;
+                cursor: pointer;
+                width:40px;
+                height:40px;
+                border: 1px solid $cyan;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                left: 0px;
+                top: 0px;
+                transition: 0.5s all;
+                @include media-breakpoint-down(md) {
+                    transition: none;
+                }
+            }
+
             // Filters
             .portfolioFiltersContainer{
+                background-color: red;
+
                 .portfolioFiltersContainerList{
                     .portfolioFiltersList{
                         .portfolioFilter{
@@ -597,26 +617,17 @@ body{
                         width: 190px;
                     }
 
-                    overflow:hidden;
+                    overflow: hidden;
                     transition: 0.5s all;
                 }
 
-                .portfolioFilterButtonContainer{
-                    .portfolioFilterButton{
-                        color: $cyan;
-                        cursor: pointer;
-                        width:40px;
-                        height:40px;
-                        border: 1px solid $cyan;
-                        display:flex;
-                        justify-content: center;
-                        align-items: center;
-                        position: relative;
-                        left: 0px;
-                        top: 0px;
-                        transition: 0.5s all;
+                .portfolioFilterButton{
+                    @include media-breakpoint-down(md) {
+                        position:static;
                     }
+                }
 
+                .portfolioFilterButtonContainer{
                     height:40px;
                     margin-bottom: 16px;
                 }
@@ -624,10 +635,39 @@ body{
                 &.inactive{
                     .portfolioFilterButton{
                         left: -87px;
-                        top: -55px;
+
+                        @include media-breakpoint-down(md) {
+                            left: 660px;
+                        }
                     }
 
                     width:0px;
+                    padding: 0px;
+                    padding-top: 16px;
+                }
+
+                @include media-breakpoint-down(md) {
+                    position:fixed;
+                    right:0;
+                    top:0;
+                    padding: 16px;
+                    box-sizing: border-box;
+                    width: 33%;
+
+                    .portfolioFilterButtonContainer{
+                        position: static;
+                        right:0px;
+                        top:0px;
+                        width:100%;
+
+                        @include media-breakpoint-down(md) {
+                            position:static;
+                        }
+                    }
+                }
+
+                @include media-breakpoint-down(xs) {
+                    width: 50%;
                 }
 
                 min-height: 32px;
@@ -637,18 +677,12 @@ body{
                 padding: 0;
                 width: calc((100% / 12)*2);
                 transition: 0.5s all;
-
-
-                @include media-breakpoint-down(md) {
-                    width: calc((100% / 12)*4);
-                }
             }
     
             // Portfolio elements
             .portfolioElementsContainer{
                 .portfolioElement{
                     width: 33%;
-                    min-width: 300px;
                     display: block;
                     padding: 0px 20px 20px 0px;
                     float: left;
@@ -666,6 +700,10 @@ body{
 
                     &>.portfolioElementText{
                         height: 200px;
+
+                        @include media-breakpoint-down(xs) {
+                            height: auto;
+                        }
                     }
 
                     &>.portfolioElementThumbnail{
@@ -734,6 +772,14 @@ body{
                                 opacity: 0.5;
                             }
                         }
+                    }
+
+                    @include media-breakpoint-down(md) {
+                        width:50%;
+                    }
+
+                    @include media-breakpoint-down(xs) {
+                        width:100%;
                     }
                 }
 

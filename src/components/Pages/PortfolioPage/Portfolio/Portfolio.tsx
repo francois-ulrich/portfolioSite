@@ -215,11 +215,28 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
 
         return (
             <div className="portfolio">
-                <h1>Portfolio</h1>
-
                 <Row>
-                    <Col md={this.state.toggleFilters?10:12} sm={this.state.toggleFilters?8:12} className="portfolioElementsContainer">
-                        {elements}
+                    <Col md={this.state.toggleFilters?10:12} className="portfolioElementsContainer">
+                        <Row>
+                            <Col xs="8">
+                                <h1>Portfolio</h1>
+                            </Col>
+                            <Col xs="4">
+                                <div className="portfolioFilterButtonContainer d-flex d-lg-none justify-content-end">
+                                    <div className="portfolioFilterButton" onClick={ this.toggleFilters }>
+                                        {
+                                            this.state.toggleFilters 
+                                            ? <FontAwesomeIcon icon={['fas', 'times']} /> 
+                                            : <FontAwesomeIcon icon={['fas', 'filter']} />}
+                                    </div>
+                                </div>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                {elements}
+                            </Col>
+                        </Row>
                     </Col>
 
                     <div className={"portfolioFiltersContainer" + (this.state.toggleFilters ? "" : " inactive")}>
