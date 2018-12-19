@@ -6,7 +6,19 @@ import HeaderRight from "./HeaderRight/HeaderRight";
 
 //import 'bootstrap-css-only';
 
-export default class Header extends React.Component {
+interface HeaderState{
+    open: boolean,
+}
+
+export default class Header extends React.Component<any,HeaderState>{
+    constructor(props:any){
+        super(props);
+        
+        this.state = {
+            open: false,
+        }
+    }
+
     render(){
         return (
             <header>

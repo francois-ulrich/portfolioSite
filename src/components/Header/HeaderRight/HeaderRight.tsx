@@ -2,7 +2,9 @@ import * as React from "react";
 import { Col } from "reactstrap";
 
 import HeaderNav from "./HeaderNav/HeaderNav";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+// Links in header
+const links = require("./../links.json");
 
 export default class HeaderRight extends React.Component {
     render(){

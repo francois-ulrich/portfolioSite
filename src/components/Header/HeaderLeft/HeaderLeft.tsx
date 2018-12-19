@@ -7,13 +7,13 @@ import HeaderLogo from "./HeaderLogo/HeaderLogo";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core';
 // Load logos
-import { faAt } from '@fortawesome/free-solid-svg-icons';
+import { faAt, faBars } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 
-library.add(faLinkedinIn, faGithub, faAt);
+library.add(faLinkedinIn, faGithub, faAt, faBars);
 
 // Links in header
-const links = require("./links.json");
+const links = require("./../links.json");
 
 export default class HeaderLeft extends React.Component {
     render(){
@@ -21,7 +21,7 @@ export default class HeaderLeft extends React.Component {
             <Col className="headerLeft d-sm-flex align-items-center " md="7" lg="5" xl="4">
                 <HeaderLogo text="François Ulrich"/>
 
-                <div className="headerContactLinks">
+                <div className="headerContactLinks d-none d-sm-flex">
                     <a href={links.linkedin}>
                         <FontAwesomeIcon icon={['fab', 'linkedin-in']} />
                     </a>
@@ -33,6 +33,10 @@ export default class HeaderLeft extends React.Component {
                     <a href={"mailto:"+links.email}>
                         <FontAwesomeIcon icon={['fas', 'at']} />
                     </a>
+                </div>
+
+                <div className="headerBurgerMenuButton d-flex d-sm-none">
+                    <FontAwesomeIcon icon={['fas', 'bars']} />
                 </div>
                 
             </Col>

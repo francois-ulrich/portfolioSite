@@ -17,6 +17,17 @@ $cyan : #00ffcc;
 
 $portfolioElementLinkWidth: 185px;
 
+%button{
+    color: $cyan;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border: 1px solid $cyan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 body{
     min-width:320px;
     font-family: 'Kelson Sans';
@@ -119,6 +130,10 @@ body{
     
             .headerLeft{
                 background-color: $medium-gray;
+                @include media-breakpoint-down(xs) {
+                    // background-color: red;
+                }
+
                 height:70px;
             
                 &:after{
@@ -152,7 +167,9 @@ body{
 
                     @include media-breakpoint-down(xs) {
                         width:100%;
+                        margin: 11px;
                     }
+                    
                 }
 
                 .headerContactLinks{
@@ -164,11 +181,20 @@ body{
                         width:100%;
                     }
                 }
+
+                .headerBurgerMenuButton{
+                    @extend %button;
+                }
             }
     
             .headerRight{
-                background-color: $medium-gray ;
                 height:70px;
+                background-color: $medium-gray;
+
+                @include media-breakpoint-down(xs) {
+                    // background-color: red;
+                    height:auto;
+                }
             
                 &:before{
                     position:absolute;
@@ -189,7 +215,7 @@ body{
                     justify-content: space-evenly;
                     align-items: center;
                 
-                    &>a{
+                    .headerNavLink{
                         color:$white;
                         font-size: 12pt;
                         text-decoration: none;
@@ -207,7 +233,19 @@ body{
                             background-color:$cyan;
                             color: #474747;
                         }
-                        
+
+                        @include media-breakpoint-down(xs) {
+                            display:flex;
+                            padding:0;
+                            text-align:center;
+                            justify-content: center;
+                            align-items: center;
+                            height:60px;
+                        }
+                    }
+
+                    @include media-breakpoint-down(xs) {
+                        display:block;
                     }
                 }
             }
@@ -215,7 +253,10 @@ body{
             @include media-breakpoint-down(xs) {
                 // position:fixed;
                 z-index: 10;
+                background-color: red;
             }
+
+
         }
 
         .home{
@@ -563,14 +604,16 @@ body{
     
         .portfolio{
             .portfolioFilterButton{
-                color: $cyan;
-                cursor: pointer;
-                width:40px;
-                height:40px;
-                border: 1px solid $cyan;
-                display:flex;
-                justify-content: center;
-                align-items: center;
+                // color: $cyan;
+                // cursor: pointer;
+                // width:40px;
+                // height:40px;
+                // border: 1px solid $cyan;
+                // display:flex;
+                // justify-content: center;
+                // align-items: center;
+                @extend %button;
+
                 position: relative;
                 left: 0px;
                 top: 0px;
