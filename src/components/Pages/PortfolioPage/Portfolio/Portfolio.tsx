@@ -245,7 +245,8 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
                                 {
                                     this.state.toggleFilters 
                                     ? <FontAwesomeIcon icon={['fas', 'times']} /> 
-                                    : <FontAwesomeIcon icon={['fas', 'filter']} />}
+                                    : <FontAwesomeIcon icon={['fas', 'filter']} />
+                                }
                             </div>
                         </div>
 

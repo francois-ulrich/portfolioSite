@@ -10,6 +10,7 @@ interface HeaderState{
     open: boolean,
 }
 
+// export default class Header extends React.Component<any,HeaderState>{
 export default class Header extends React.Component<any,HeaderState>{
     constructor(props:any){
         super(props);
@@ -17,18 +18,29 @@ export default class Header extends React.Component<any,HeaderState>{
         this.state = {
             open: false,
         }
+
+        this.toggleMenu = this.toggleMenu.bind(this);
+    }
+
+    toggleMenu(){
+        this.setState({
+            open: !this.state.open,
+        });
     }
 
     render(){
         return (
-            <header>
-                <Container>
-                    <Row>
-                        <HeaderLeft/>
-                        <HeaderRight/>
-                    </Row>
-                </Container>
-            </header>
+            <div>
+                <div className="headerSpace"/>
+                <header>
+                    <Container>
+                        <Row>
+                            <HeaderLeft toggleMenu={this.toggleMenu}/>
+                            <HeaderRight open={this.state.open} toggleMenu={this.toggleMenu}/>
+                        </Row>
+                    </Container>
+                </header>
+            </div>
         );
     }
 }

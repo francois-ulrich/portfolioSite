@@ -15,7 +15,15 @@ library.add(faLinkedinIn, faGithub, faAt, faBars);
 // Links in header
 const links = require("./../links.json");
 
-export default class HeaderLeft extends React.Component {
+interface HeaderLeftProps{
+    toggleMenu:any,
+}
+
+export default class HeaderLeft extends React.Component<HeaderLeftProps>{
+    constructor(props:HeaderLeftProps){
+        super(props);
+    }
+
     render(){
         return (
             <Col className="headerLeft d-sm-flex align-items-center " md="7" lg="5" xl="4">
@@ -35,10 +43,9 @@ export default class HeaderLeft extends React.Component {
                     </a>
                 </div>
 
-                <div className="headerBurgerMenuButton d-flex d-sm-none">
+                <div className="headerBurgerMenuButton d-sm-none" onClick={this.props.toggleMenu}>
                     <FontAwesomeIcon icon={['fas', 'bars']} />
                 </div>
-                
             </Col>
         );
     }
