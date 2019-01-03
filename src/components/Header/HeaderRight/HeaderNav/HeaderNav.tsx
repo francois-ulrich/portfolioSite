@@ -25,7 +25,6 @@ export default class HeaderNav extends React.Component {
 
     render(){
         return (
-            // <nav className={"headerNav" + (this.props.open?" active":"")}>
             <nav className="headerNav">
                 <NavLink className="headerNavLink" to="/" exact={true}>À propos</NavLink>
                 <NavLink className="headerNavLink" to="/portfolio">Portfolio</NavLink>

@@ -45,37 +45,81 @@ body{
         }
     }
 
+    // h2{
+    //     &:before{
+    //         transform: rotate(180deg);
+    //         position: absolute;
+    //         width: 12px;
+    //         top: -6px;
+    //         left: auto;
+    //         margin-left: -18px;
+    //         content:url("./img/headerShardCyan.svg");
+
+    //         @include media-breakpoint-down(xs) {
+    //             width: 10px;
+    //         }
+    //     }
+
+    //     &:after{
+    //         position: absolute;
+    //         width: 12px;
+    //         top: 0px;
+    //         right: auto;
+    //         margin-left: 6px;
+    //         content:url("./img/headerShardCyan.svg");
+
+    //         @include media-breakpoint-down(xs) {
+    //             width: 10px;
+    //             margin-left: 8px;
+    //         }
+    //     }
+
+    //     font-size:24px;
+    //     background-color: $cyan;
+    //     display: inline-block;
+    //     color: $darker-gray;
+    //     padding: 4px 6px;
+    //     text-transform: uppercase;
+    //     letter-spacing: 2px;
+    //     margin: 0px 12px;
+    //     margin-bottom: 40px;
+
+    //     @include media-breakpoint-down(xs) {
+    //         font-size: 17px;
+    //         letter-spacing: 0px;
+    //         padding: 4px 8px;
+    //     }
+    // }
+
+    // .shape:before {
+    //     content:"";
+    //     -moz-transform: skewX(11deg);
+    //     -webkit-transform: skewX(11deg);
+    //     transform: skewX(20deg);
+    //     width: 140%;
+    //     left: -20%;
+    //     height: 100%;
+    //     background-color: #555;
+    //     position: absolute;
+    //     top: 0;
+    //     z-index: -1;
+    // }
+
     h2{
         &:before{
-            transform: rotate(180deg);
+            content: "";
+            transform: skewX(-20deg);
+            width: calc(100% + 20px);
+            height: 100%;
+            background-color: $cyan;
             position: absolute;
-            width: 12px;
-            top: -6px;
-            left: auto;
-            margin-left: -18px;
-            content:url("./img/headerShardCyan.svg");
-
-            @include media-breakpoint-down(xs) {
-                width: 10px;
-            }
+            top: 0;
+            left: -9px;
+            z-index: -8;
         }
 
-        &:after{
-            position: absolute;
-            width: 12px;
-            top: 0px;
-            right: auto;
-            margin-left: 6px;
-            content:url("./img/headerShardCyan.svg");
-
-            @include media-breakpoint-down(xs) {
-                width: 10px;
-                margin-left: 8px;
-            }
-        }
-
+        position:relative;
         font-size:24px;
-        background-color: $cyan;
         display: inline-block;
         color: $darker-gray;
         padding: 4px 6px;
@@ -83,6 +127,7 @@ body{
         letter-spacing: 2px;
         margin: 0px 12px;
         margin-bottom: 40px;
+        z-index: 2;
 
         @include media-breakpoint-down(xs) {
             font-size: 17px;
@@ -137,20 +182,18 @@ body{
     
             .headerLeft{
                 background-color: $medium-gray;
-                @include media-breakpoint-down(xs) {
-                    // background-color: red;
-                }
-
                 height:70px;
+                z-index: 10;
             
-                &:after{
-                    position:absolute;
-                    height:70px;
-                    width: 23px;
-                    right:-23px;
-
-                    @include media-breakpoint-up(lg) {
-                        content:url("./img/headerShard.svg");
+                @include media-breakpoint-up(md) {
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background-color: $medium-gray;
+                        transform: skewX(-20deg);
+                        z-index: -2;
                     }
                 }
     
@@ -212,8 +255,22 @@ body{
             }
     
             .headerRight{
-                height:70px;
                 background-color: $medium-gray;
+                height:70px;
+                z-index: 10;
+            
+                @include media-breakpoint-up(md) {
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background-color: $medium-gray;
+                        transform: skewX(-20deg);
+                        z-index: -2;
+                        left: -12px;
+                    }
+                }
 
                 @include media-breakpoint-down(xs) {
                     &.active{
@@ -232,9 +289,9 @@ body{
                     left:-23px;
                     transform: rotate(180deg);
 
-                    @include media-breakpoint-up(lg) {
-                        content:url("./img/headerShard.svg");
-                    }
+                    // @include media-breakpoint-up(lg) {
+                    //     content:url("./img/headerShard.svg");
+                    // }
                 }
     
                 nav.headerNav{

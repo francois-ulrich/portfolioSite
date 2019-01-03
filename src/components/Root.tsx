@@ -11,6 +11,7 @@ export default class Root extends React.Component{
     render(){
         return (
             <div className="website">
+                {/* <BrowserRouter basename={'/test'}> */}
                 <BrowserRouter>
                     <div>
                         <Header/>
