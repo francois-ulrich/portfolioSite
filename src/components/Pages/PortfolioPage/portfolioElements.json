@@ -1,5 +1,18 @@
 [
     {
+        "title": "Algorithme de pathfinder",
+        "imgUrl": "pathfinder.jpg",
+        "description": "Projet d'algorithme de recherche de chemin développé sur mon temps libre avec Typescript, NPM et Webpack. Utilisation de l'élément HTML Canvas.",
+        "url": "./pathfinder",
+        "githubLink": "https://github.com/fulrich3/AStarAlgorithm",
+        "technologies": [
+            {"id":1,"name":"HTML"},
+            {"id":7,"name":"TypeScript"},
+            {"id":9,"name":"Canvas"}
+        ],
+        "category_id":1
+    },
+    {
         "title": "PG Tech",
         "imgUrl": "pgtech.jpg",
         "description": "Intégration et développement d'un site vitrine présentant les services de la société PG Tech, spécialisée dans la vente et l’installation de systèmes de surveillance.",
@@ -11,7 +24,6 @@
             {"id":6,"name":"JavaScript"},
             {"id":8,"name":"JQuery"},
             {"id":11,"name":"PHP"}
-            
         ],
         "category_id":2
     },

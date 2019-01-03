@@ -28,9 +28,21 @@ $portfolioElementLinkWidth: 185px;
     cursor: pointer;
 }
 
+.buttonText{
+    color: $cyan;
+    height: 30px;
+    border: 1px solid $cyan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 8px 0;
+}
+
 body{
     min-width:320px;
     font-family: 'Kelson Sans';
+    background-color: black;
 
     h1{
         color:$cyan;
@@ -44,66 +56,6 @@ body{
             font-size: 1.7rem;
         }
     }
-
-    // h2{
-    //     &:before{
-    //         transform: rotate(180deg);
-    //         position: absolute;
-    //         width: 12px;
-    //         top: -6px;
-    //         left: auto;
-    //         margin-left: -18px;
-    //         content:url("./img/headerShardCyan.svg");
-
-    //         @include media-breakpoint-down(xs) {
-    //             width: 10px;
-    //         }
-    //     }
-
-    //     &:after{
-    //         position: absolute;
-    //         width: 12px;
-    //         top: 0px;
-    //         right: auto;
-    //         margin-left: 6px;
-    //         content:url("./img/headerShardCyan.svg");
-
-    //         @include media-breakpoint-down(xs) {
-    //             width: 10px;
-    //             margin-left: 8px;
-    //         }
-    //     }
-
-    //     font-size:24px;
-    //     background-color: $cyan;
-    //     display: inline-block;
-    //     color: $darker-gray;
-    //     padding: 4px 6px;
-    //     text-transform: uppercase;
-    //     letter-spacing: 2px;
-    //     margin: 0px 12px;
-    //     margin-bottom: 40px;
-
-    //     @include media-breakpoint-down(xs) {
-    //         font-size: 17px;
-    //         letter-spacing: 0px;
-    //         padding: 4px 8px;
-    //     }
-    // }
-
-    // .shape:before {
-    //     content:"";
-    //     -moz-transform: skewX(11deg);
-    //     -webkit-transform: skewX(11deg);
-    //     transform: skewX(20deg);
-    //     width: 140%;
-    //     left: -20%;
-    //     height: 100%;
-    //     background-color: #555;
-    //     position: absolute;
-    //     top: 0;
-    //     z-index: -1;
-    // }
 
     h2{
         &:before{
@@ -130,7 +82,7 @@ body{
         z-index: 2;
 
         @include media-breakpoint-down(xs) {
-            font-size: 17px;
+            font-size: 22px;
             letter-spacing: 0px;
             padding: 4px 8px;
         }
@@ -151,776 +103,788 @@ body{
     }
     
     #root{
-        min-height:100vh;
-        background-color: $darker-gray;
+        .website{
+            transition: 0.5s all;
+            min-height:100vh;
+            background-color: $darker-gray;
+            
+            .websiteContainer{
+                background-color: $dark-gray;
+                color:$white;
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+
+            .headerSpace{
+                @include media-breakpoint-down(xs) {
+                    display: block;
+                }
+
+                height: 70px;
+                display: none;
+            }
         
-        .websiteContainer{
-            background-color: $dark-gray;
-            color:$white;
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
+            header{
+                &>.container{
+                    background-color: $medium-darker-gray;
+                    height: 100%;
 
-        .headerSpace{
-            @include media-breakpoint-down(xs) {
-                display: block;
-            }
-
-            height: 70px;
-            display: none;
-        }
-    
-        header{
-            &>.container{
-                background-color: $medium-darker-gray;
-                height: 100%;
-
-                @include media-breakpoint-down(lg) {
+                    @include media-breakpoint-down(lg) {
+                        background-color: $medium-gray;
+                    }
+                }
+        
+                .headerLeft{
                     background-color: $medium-gray;
-                }
-            }
-    
-            .headerLeft{
-                background-color: $medium-gray;
-                height:70px;
-                z-index: 10;
-            
-                @include media-breakpoint-up(md) {
-                    &:after{
-                        content: '';
-                        position: absolute;
-                        width: 100%;
-                        height: 100%;
-                        background-color: $medium-gray;
-                        transform: skewX(-20deg);
-                        z-index: -2;
-                    }
-                }
-    
-                .headerLogo{
-                    width:250px;
-                    height:50px;
+                    height:70px;
+                    z-index: 10;
                 
-                    .headerLogoImage{
-                        height:100%;
-                        width:auto;
+                    @include media-breakpoint-up(md) {
+                        &:after{
+                            content: '';
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            background-color: $medium-gray;
+                            transform: skewX(-20deg);
+                            z-index: -2;
+                        }
                     }
-                
-                    .headerLogoText{
-                        font-family: Antonio;
-                        color: $white;
-                        text-transform: uppercase;
-                        font-size: 20px;
-                        letter-spacing: 2px;
-                        margin-left:8px;
-                    }
-
-                    @include media-breakpoint-down(xs) {
-                        width:100%;
-                        margin: 11px;
-                    }
+        
+                    .headerLogo{
+                        width:250px;
+                        height:50px;
+                        text-decoration: none;
                     
-                }
+                        .headerLogoImage{
+                            height:100%;
+                            width:auto;
+                        }
+                    
+                        .headerLogoText{
+                            font-family: Antonio;
+                            color: $white;
+                            text-transform: uppercase;
+                            font-size: 20px;
+                            letter-spacing: 2px;
+                            margin-left:8px;
+                        }
 
-                .headerContactLinks{
-                    width: calc(100% - 250px);
-                    display: flex;
-                    justify-content: space-evenly;
+                        @include media-breakpoint-down(xs) {
+                            width:100%;
+                            margin: 11px;
+                        }
+                        
+                    }
+
+                    .headerContactLinks{
+                        width: calc(100% - 250px);
+                        display: flex;
+                        justify-content: space-evenly;
+
+                        @include media-breakpoint-down(xs) {
+                            width:100%;
+                        }
+                    }
+
+                    .headerBurgerMenuButton{
+                        @extend %button;
+                        position: absolute;
+                        right: 15px;
+                        top: 15px;
+                    }
+
+                    .burgerMenuContainer{
+                        height:0px;
+                        overflow:hidden;
+                        transition:all 0.4s;
+
+                        &.active{
+                            height:auto;
+                        }
+
+                        .burgerMenu{
+                            height:auto;
+                        }
+                    }
+                }
+        
+                .headerRight{
+                    background-color: $medium-gray;
+                    height:70px;
+                    z-index: 10;
+                
+                    @include media-breakpoint-up(md) {
+                        &:after{
+                            content: '';
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            background-color: $medium-gray;
+                            transform: skewX(-20deg);
+                            z-index: -2;
+                            left: -12px;
+                        }
+                    }
 
                     @include media-breakpoint-down(xs) {
-                        width:100%;
+                        &.active{
+                            height:300px;
+                        }
+
+                        height:0px;
+                        min-height:0px;
+                        transition: all 0.4s;
                     }
-                }
-
-                .headerBurgerMenuButton{
-                    @extend %button;
-                    position: absolute;
-                    right: 15px;
-                    top: 15px;
-                }
-
-                .burgerMenuContainer{
-                    height:0px;
-                    overflow:hidden;
-                    transition:all 0.4s;
-
-                    &.active{
-                        height:auto;
+                
+                    &:before{
+                        position:absolute;
+                        height:70px;
+                        width: 23px;
+                        left:-23px;
+                        transform: rotate(180deg);
                     }
-
-                    .burgerMenu{
-                        height:auto;
-                    }
-                }
-            }
-    
-            .headerRight{
-                background-color: $medium-gray;
-                height:70px;
-                z-index: 10;
-            
-                @include media-breakpoint-up(md) {
-                    &:after{
-                        content: '';
-                        position: absolute;
+        
+                    nav.headerNav{
                         width: 100%;
-                        height: 100%;
-                        background-color: $medium-gray;
-                        transform: skewX(-20deg);
-                        z-index: -2;
-                        left: -12px;
+                        height:100%;
+                        display:flex;
+                        justify-content: space-evenly;
+                        align-items: center;
+                        overflow: hidden;
+                    
+                        .headerNavLink{
+                            color:$white;
+                            font-size: 12pt;
+                            text-decoration: none;
+                            display: inline-block;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                            padding:5px 10px;
+                    
+                            &:hover{
+                                color:$cyan;
+                                transition:color 0s;
+                            }
+
+                            &.active{
+                                background-color:$cyan;
+                                color: #474747;
+                            }
+
+                            &>svg{
+                                margin-right: 8px;
+                            }
+
+                            @include media-breakpoint-down(xs) {
+                                display:flex;
+                                padding:0;
+                                text-align:center;
+                                justify-content: center;
+                                align-items: center;
+                                height:60px;
+                            }
+                        }
+
+                        @include media-breakpoint-down(xs) {
+                            display:block;
+                        }
                     }
                 }
 
                 @include media-breakpoint-down(xs) {
-                    &.active{
-                        height:300px;
-                    }
-
-                    height:0px;
-                    min-height:0px;
-                    transition: all 0.4s;
-                }
-            
-                &:before{
-                    position:absolute;
-                    height:70px;
-                    width: 23px;
-                    left:-23px;
-                    transform: rotate(180deg);
-
-                    // @include media-breakpoint-up(lg) {
-                    //     content:url("./img/headerShard.svg");
-                    // }
-                }
-    
-                nav.headerNav{
+                    position:fixed;
+                    z-index: 10;
                     width: 100%;
-                    height:100%;
-                    display:flex;
-                    justify-content: space-evenly;
-                    align-items: center;
-                    overflow: hidden;
-                
-                    .headerNavLink{
-                        color:$white;
-                        font-size: 12pt;
-                        text-decoration: none;
-                        display: inline-block;
-                        text-transform: uppercase;
-                        letter-spacing: 1px;
-                        padding:5px 10px;
-                
+                    background-color: red;
+                    top:0;
+                }
+
+                background-color: $medium-gray;
+            }
+
+            .home{
+                img.homeProfileImage{
+                    width: 100%;
+                    max-width: 250px;
+                    margin-bottom: 25px;
+                }
+
+                .skills{
+                    .skill{
+                        .skillTitle{
+                            font-size: 15px;
+                        }
+                        
+                        .skillBarContainer{
+                            .skillBar{
+                                background-color: $cyan;
+                                height:100%;
+                                width:0%;
+                                opacity:1;
+                                transition: all 1s;
+                            }
+
+                            border: 1px solid $cyan;
+                            height:24px;
+                            padding: 1px;
+
+                            @include media-breakpoint-down(md) {
+                                height: 12px;
+                            }
+                        }
+
+                        padding: 2px 0px;
+                    }
+
+                    @include media-breakpoint-down(md){
+                        margin-bottom: 30px;
+                    }
+                }
+
+                .hobby{
+                    .hobbyFrame{
                         &:hover{
-                            color:$cyan;
-                            transition:color 0s;
-                        }
-
-                        &.active{
-                            background-color:$cyan;
-                            color: #474747;
-                        }
-
-                        &>svg{
-                            margin-right: 8px;
-                        }
-
-                        @include media-breakpoint-down(xs) {
-                            display:flex;
-                            padding:0;
-                            text-align:center;
-                            justify-content: center;
-                            align-items: center;
-                            height:60px;
-                        }
-                    }
-
-                    @include media-breakpoint-down(xs) {
-                        display:block;
-                    }
-                }
-            }
-
-            @include media-breakpoint-down(xs) {
-                position:fixed;
-                z-index: 10;
-                width: 100%;
-                background-color: red;
-                top:0;
-            }
-
-            background-color: $medium-gray;
-        }
-
-        .home{
-            img.homeProfileImage{
-                width: 100%;
-                max-width: 250px;
-                margin-bottom: 35px;
-            }
-
-            .skills{
-                .skill{
-                    .skillTitle{
-                        font-size: 15px;
-                    }
-                    
-                    .skillBarContainer{
-                        .skillBar{
-                            background-color: $cyan;
-                            height:100%;
-                        }
-
-                        border: 1px solid $cyan;
-                        height:24px;
-                        padding: 1px;
-
-                        @include media-breakpoint-down(md) {
-                            height: 12px;
-                        }
-                    }
-
-                    padding: 2px 0px;
-                }
-
-                @include media-breakpoint-down(md){
-                    margin-bottom: 30px;
-                }
-            }
-
-            .hobby{
-                .hobbyFrame{
-                    &:hover{
-                        /*BLOC 1*/
-                        @keyframes gamedev1{
-                            0% {left: -64px; opacity:0;}
-                            25% {left: 0px; opacity:1;}
-                        }
-
-                        @keyframes gamedev2{
-                            0% {left: 64px; opacity:0;}
-                            25% {left: 64px; opacity:0;}
-                            50% {left: 0px; opacity:1;}
-                        }
-
-                        @keyframes gamedev3{
-                            0% {top: -64px; opacity:0;}
-                            50% {top: -64px; opacity:0;}
-                            75% {top: 0px; opacity:1;}
-                        }
-
-                        @keyframes gamedev4{
-                            0% {top: 64px; opacity:0;}
-                            75% {top: 64px; opacity:0;}
-                            100% {top: 0px; opacity:1;}
-                        }
-
-                        img.gamedev1{
-                            animation-name: gamedev1;
-                            animation-duration: 1s;
-                        }
-
-                        img.gamedev2{
-                            animation-name: gamedev2;
-                            animation-duration: 1s;
-                        }
-
-                        img.gamedev3{
-                            animation-name: gamedev3;
-                            animation-duration: 1s;
-                        }
-
-                        img.gamedev4{
-                            animation-name: gamedev4;
-                            animation-duration: 1s;
-                        }
-
-
-                        /*BLOC 2*/
-                        @keyframes series1 {
-                            0% {
-                                transform: rotate(0deg);
+                            /*BLOC 1*/
+                            @keyframes gamedev1{
+                                0% {left: -64px; opacity:0;}
+                                25% {left: 0px; opacity:1;}
                             }
 
-                            100% {
-                                transform: rotate(360deg);
+                            @keyframes gamedev2{
+                                0% {left: 64px; opacity:0;}
+                                25% {left: 64px; opacity:0;}
+                                50% {left: 0px; opacity:1;}
                             }
-                        }
 
-                        .series1{
-                            animation-name: series1;
-                            animation-iteration-count: infinite;
-                            animation-duration: 1s;
-                        }
+                            @keyframes gamedev3{
+                                0% {top: -64px; opacity:0;}
+                                50% {top: -64px; opacity:0;}
+                                75% {top: 0px; opacity:1;}
+                            }
 
-                        /*BLOC 3*/
-                        @keyframes drawing1 {
-                            0% {left: -49px;}
-                            100% {left: 0px;}
-                        }
+                            @keyframes gamedev4{
+                                0% {top: 64px; opacity:0;}
+                                75% {top: 64px; opacity:0;}
+                                100% {top: 0px; opacity:1;}
+                            }
 
-                        .interet_bloc_dessin:hover .drawing1{
-                            animation-name: drawing1;
-                            animation-duration: 0.5s;
-                        }
+                            img.gamedev1{
+                                animation-name: gamedev1;
+                                animation-duration: 1s;
+                            }
 
-                        /*BLOC 3*/
-                        @keyframes drawing1 {
-                            0% {left: -49px;}
-                            100% {left: 0px;}
-                        }
+                            img.gamedev2{
+                                animation-name: gamedev2;
+                                animation-duration: 1s;
+                            }
 
-                        .drawing1{
-                            animation-name: drawing1;
-                            animation-duration: 0.5s;
-                        }
+                            img.gamedev3{
+                                animation-name: gamedev3;
+                                animation-duration: 1s;
+                            }
 
-                        /*BLOC 4*/
-                        @keyframes games1 {
-                            0% {left: 0px;}
-                            100% {left: -64px;}
-                        }
+                            img.gamedev4{
+                                animation-name: gamedev4;
+                                animation-duration: 1s;
+                            }
 
-                        @keyframes games3 {
-                            0% {left: 64px;}
-                            100% {left: 36px;}
-                        }
 
-                        @keyframes games4 {
-                            0% {left: 0px;}
-                            100% {left: -64px;}
-                        }
+                            /*BLOC 2*/
+                            @keyframes series1 {
+                                0% {
+                                    transform: rotate(0deg);
+                                }
 
-                        .games1{
-                            animation-name: games1;
-                            animation-duration: 1s;
-                            animation-iteration-count: infinite;
-                            animation-timing-function: linear;
-                        }
+                                100% {
+                                    transform: rotate(360deg);
+                                }
+                            }
 
-                        .games2{
-                            display:block;
+                            .series1{
+                                animation-name: series1;
+                                animation-iteration-count: infinite;
+                                animation-duration: 1s;
+                            }
+
+                            /*BLOC 3*/
+                            @keyframes drawing1 {
+                                0% {left: -49px;}
+                                100% {left: 0px;}
+                            }
+
+                            .interet_bloc_dessin:hover .drawing1{
+                                animation-name: drawing1;
+                                animation-duration: 0.5s;
+                            }
+
+                            /*BLOC 3*/
+                            @keyframes drawing1 {
+                                0% {left: -49px;}
+                                100% {left: 0px;}
+                            }
+
+                            .drawing1{
+                                animation-name: drawing1;
+                                animation-duration: 0.5s;
+                            }
+
+                            /*BLOC 4*/
+                            @keyframes games1 {
+                                0% {left: 0px;}
+                                100% {left: -64px;}
+                            }
+
+                            @keyframes games3 {
+                                0% {left: 64px;}
+                                100% {left: 36px;}
+                            }
+
+                            @keyframes games4 {
+                                0% {left: 0px;}
+                                100% {left: -64px;}
+                            }
+
+                            .games1{
+                                animation-name: games1;
+                                animation-duration: 1s;
+                                animation-iteration-count: infinite;
+                                animation-timing-function: linear;
+                            }
+
+                            .games2{
+                                display:block;
+                            }
+
+                            .games3{
+                                display:none;
+                            }
+
+                            .games2{
+                                display:none;
+                            }
+
+                            .games3{
+                                display:block;
+                            }
+
+                            .games4{
+                                display:none;
+                            }
+
+                            .games4{
+                                display:block;
+                                animation-name: games3;
+                                animation-duration: 0.4s;
+                                animation-iteration-count: infinite;
+                                animation-timing-function: linear;
+                            }
+
+                            .animation2{
+                                display:block;
+                            }
                         }
 
                         .games3{
                             display:none;
-                        }
 
-                        .games2{
-                            display:none;
-                        }
-
-                        .games3{
-                            display:block;
                         }
 
                         .games4{
                             display:none;
+                            top:36px;
                         }
 
-                        .games4{
-                            display:block;
-                            animation-name: games3;
-                            animation-duration: 0.4s;
-                            animation-iteration-count: infinite;
-                            animation-timing-function: linear;
+                        .animation1, .animation2{
+                            width:auto;
+                            height:68px;
+                            position:absolute;
+                            left:-15px;
+                            transform: scaleX(-1);
+                            filter: contrast(-200%);
                         }
 
                         .animation2{
-                            display:block;
-                        }
-                    }
-
-                    .games3{
-                        display:none;
-
-                    }
-
-                    .games4{
-                        display:none;
-                        top:36px;
-                    }
-
-                    .animation1, .animation2{
-                        width:auto;
-                        height:68px;
-                        position:absolute;
-                        left:-15px;
-                        transform: scaleX(-1);
-                        filter: contrast(-200%);
-                    }
-
-                    .animation2{
-                        display:none;
-                    }
-
-                    img{
-                        position:absolute;
-                        image-rendering: unset;
-                        left:0px;
-                        top:0px;
-                    }
-
-                    width: 64px;
-                    height: 64px;
-                    border-radius: 4px;
-                    position: relative;
-                    overflow: hidden;
-                    background-color: black;
-                }
-
-                >span{
-                    margin: 10px;
-                    text-align:center;
-                    font-size: 13px;
-                }
-
-                display:flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                padding: 16px;
-            }
-
-            .experiences{
-                .experience{
-                    .experienceDate{
-                        &::first-letter{
-                            text-transform: capitalize;
+                            display:none;
                         }
 
-                        .experienceDateTextContainer{
-                            .experienceDateText{
-                                @include media-breakpoint-down(xs){    
-                                    position: relative;
-                                    width: 150px;
-                                    top: -24px;
-                                    left: 115%;
-                                    text-align: left;
+                        img{
+                            position:absolute;
+                            image-rendering: unset;
+                            left:0px;
+                            top:0px;
+                        }
+
+                        width: 64px;
+                        height: 64px;
+                        border-radius: 4px;
+                        position: relative;
+                        overflow: hidden;
+                        background-color: black;
+                    }
+
+                    >span{
+                        margin: 10px;
+                        text-align:center;
+                        font-size: 13px;
+                    }
+
+                    display:flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 16px;
+                }
+
+                .experiences{
+                    .experience{
+                        .experienceDate{
+                            &::first-letter{
+                                text-transform: capitalize;
+                            }
+
+                            .experienceDateTextContainer{
+                                .experienceDateText{
+                                    @include media-breakpoint-down(xs){    
+                                        position: relative;
+                                        width: 150px;
+                                        top: -24px;
+                                        left: 115%;
+                                        text-align: left;
+                                    }
+
+                                    display: inline-block;
                                 }
 
+                                @include media-breakpoint-down(xs) {
+                                    &:before{
+                                        // Rond
+                                        content: '';
+                                        display: inline-block;
+                                        width: 30px;
+                                        height: 30px;
+                                        background-color: $cyan;
+                                        border:1px solid $cyan;
+                                        border-radius: 15px;
+                                        position: relative;
+                                        top: 9px;
+                                        left: -15px;
+                                    }
+                                }
+
+                                @include media-breakpoint-up(sm) {
+                                    &:after{
+                                        // Rond
+                                        content: '';
+                                        display: inline-block;
+                                        width: 30px;
+                                        height: 30px;
+                                        background-color: $cyan;
+                                        border:1px solid $cyan;
+                                        border-radius: 15px;
+                                        position: relative;
+                                        top: 9px;
+                                        margin-left: 10px;
+                                    }
+                                }
+                                
+                                @include media-breakpoint-down(sm) {
+                                    &>span{
+                                        position: relative;
+                                        left: 40px;
+                                        top: -25px;
+                                    }
+                                }
+                            }                            
+
+                            .experienceDateExtraText{
+                                margin-right:42px;
+                                font-weight: lighter;
+                            }
+
+                            &:after{
+                                // Ligne
+                                content:'';
+                                height: calc(100% + 32px);
                                 display: inline-block;
+                                width: 1px;
+                                position: absolute;
+                                background: #00ffcc;
+                                right: 30px;
+                                top:0;
                             }
 
                             @include media-breakpoint-down(xs) {
-                                &:before{
-                                    // Rond
-                                    content: '';
-                                    display: inline-block;
-                                    width: 30px;
-                                    height: 30px;
-                                    background-color: $cyan;
-                                    border:1px solid $cyan;
-                                    border-radius: 15px;
-                                    position: relative;
-                                    top: 9px;
-                                    left: -15px;
-                                }
+                                padding: 0;
                             }
 
-                            @include media-breakpoint-up(sm) {
+                            text-align:right;
+                        }
+
+                        .experienceText{
+                            .experienceTextLocation{
+                                display: block;
+                                margin-bottom: 5px;
+                            }
+
+                            @include media-breakpoint-down(xs) {
+                                margin-top:55px;
+                            }
+                        }
+
+                        &:nth-last-child(1){
+                            .experienceDate{
                                 &:after{
-                                    // Rond
-                                    content: '';
-                                    display: inline-block;
-                                    width: 30px;
-                                    height: 30px;
-                                    background-color: $cyan;
-                                    border:1px solid $cyan;
-                                    border-radius: 15px;
-                                    position: relative;
-                                    top: 9px;
-                                    margin-left: 10px;
+                                    background: linear-gradient($cyan calc(100% - 100px), transparentize($cyan,1) 100% );
                                 }
                             }
-                            
-                            @include media-breakpoint-down(sm) {
-                                &>span{
-                                    position: relative;
-                                    left: 40px;
-                                    top: -25px;
-                                }
-                            }
-                        }                            
-
-                        .experienceDateExtraText{
-                            margin-right:42px;
-                            font-weight: lighter;
                         }
 
-                        &:after{
-                            // Ligne
-                            content:'';
-                            height: calc(100% + 32px);
-                            display: inline-block;
-                            width: 1px;
-                            position: absolute;
-                            background: #00ffcc;
-                            right: 30px;
-                            top:0;
-                        }
-
-                        @include media-breakpoint-down(xs) {
-                            padding: 0;
-                        }
-
-                        text-align:right;
+                        padding-bottom: 32px;
+                        position: relative;
+                        overflow: hidden;
                     }
 
-                    .experienceText{
-                        .experienceTextLocation{
-                            display: block;
-                            margin-bottom: 5px;
-                        }
-
-                        @include media-breakpoint-down(xs) {
-                            margin-top:55px;
-                        }
-                    }
-
-                    &:nth-last-child(1){
-                        .experienceDate{
-                            &:after{
-                                background: linear-gradient($cyan calc(100% - 100px), transparentize($cyan,1) 100% );
-                            }
-                        }
-                    }
-
-                    padding-bottom: 32px;
-                    position: relative;
-                    overflow: hidden;
-                }
-
-                margin-bottom: 30px;
-            }
-        }
-    
-        .portfolio{
-            .portfolioFilterButton{
-                @extend %button;
-
-                position: relative;
-                left: 0px;
-                top: 0px;
-                transition: 0.5s all;
-                @include media-breakpoint-down(md) {
-                    transition: none;
+                    margin-bottom: 30px;
                 }
             }
-
-            // Filters
-            .portfolioFiltersContainer{
-                background-color: $dark-gray;
-
-                .portfolioFiltersContainerList{
-                    .portfolioFiltersList{
-                        .portfolioFilter{
-                            input[type="checkbox"].portfolioFilterCheckbox{
-                                -webkit-appearance: none;
-                                background-color: $medium-gray;
-                                display: inline-block;
-                                width: 14px;
-                                height: 14px;
-                                position:relative;
         
-                                &:checked:after {
-                                    content: '\2714';
-                                    font-size: 16px;
-                                    position: absolute;
-                                    top: -4px;
-                                    left: 1px;
-                                    color: $cyan;
-                                }
-        
-                                &:focus{
-                                    outline: none;
-                                }
-                            }
-        
-                            span.portfolioFilterName{
-                                padding-left: 15px;
-                            }
-                        }
-
-                        width: 190px;
-                    }
-
-                    overflow: hidden;
-                    transition: 0.5s all;
-                }
-
+            .portfolio{
                 .portfolioFilterButton{
+                    @extend %button;
+
+                    position: relative;
+                    left: 0px;
+                    top: 0px;
+                    transition: 0.5s all;
                     @include media-breakpoint-down(md) {
-                        position:static;
+                        transition: none;
                     }
                 }
 
-                .portfolioFilterButtonContainer{
-                    height:40px;
-                    margin-bottom: 16px;
-                }
+                // Filters
+                .portfolioFiltersContainer{
+                    background-color: $dark-gray;
+                    z-index: 50;
 
-                &.inactive{
-                    .portfolioFilterButton{
-                        left: -87px;
+                    .portfolioFiltersContainerList{
+                        .portfolioFiltersList{
+                            .portfolioFilter{
+                                input[type="checkbox"].portfolioFilterCheckbox{
+                                    -webkit-appearance: none;
+                                    background-color: $medium-gray;
+                                    display: inline-block;
+                                    width: 14px;
+                                    height: 14px;
+                                    position:relative;
+            
+                                    &:checked:after {
+                                        content: '\2714';
+                                        font-size: 16px;
+                                        position: absolute;
+                                        top: -4px;
+                                        left: 1px;
+                                        color: $cyan;
+                                    }
+            
+                                    &:focus{
+                                        outline: none;
+                                    }
+                                }
+            
+                                span.portfolioFilterName{
+                                    padding-left: 15px;
+                                }
+                            }
 
-                        @include media-breakpoint-down(md) {
-                            left: 660px;
+                            width: 190px;
                         }
+
+                        overflow: hidden;
+                        transition: 0.5s all;
                     }
 
-                    width:0px;
-                    padding: 0px;
-                    padding-top: 16px;
-                }
-
-                @include media-breakpoint-down(md) {
-                    position:fixed;
-                    right:0;
-                    top:0;
-                    padding: 16px;
-                    box-sizing: border-box;
-                    width: 33%;
-
-                    .portfolioFilterButtonContainer{
-                        position: static;
-                        right:0px;
-                        top:0px;
-                        width:100%;
-
+                    .portfolioFilterButton{
                         @include media-breakpoint-down(md) {
                             position:static;
                         }
                     }
-                }
 
-                @include media-breakpoint-down(xs) {
-                    width: 50%;
-                    // top: 70px;
-                }
-
-                min-height: 32px;
-                // height:100%;
-                height:100vh;
-                overflow-y: scroll;
-                padding: 16px;
-                user-select: none;
-                padding: 0;
-                width: calc((100% / 12)*2);
-                transition: 0.5s all;
-            }
-    
-            // Portfolio elements
-            .portfolioElementsContainer{
-                .portfolioElement{
-                    width: 33%;
-                    display: block;
-                    padding: 0px 20px 20px 0px;
-                    float: left;
-
-                    // Lign below block
-                    &::after{
-                        content:" ";
-                        display:block;
-                        background-color:$medium-gray;
-                        height:1px;
-                        width:60%;
-                        margin: 0 20%;
-                        transition: all 0.4s;
-                    }
-
-                    &>.portfolioElementText{
-                        height: 200px;
-                        
-                        @include media-breakpoint-down(sm) {
-                            min-height: 220px;
-                        }
-
-                        @include media-breakpoint-down(xs) {
-                            height: auto;
-                            min-height: auto;
-                        }
-                    }
-
-                    &>.portfolioElementThumbnail{
-                        background-color: black;
-                        position: relative;
-                        width: 100%;
-                        padding-top: 100%;
+                    .portfolioFilterButtonContainer{
+                        height:40px;
                         margin-bottom: 16px;
-                        overflow:hidden;
-
-                        &>.portfolioElementThumbnailImageContainer{
-                            background-color:red;
-                            top:0px;
-                            height: 100%;
-                            &>img{
-                                position:absolute;
-                                width:100%;
-                                height:auto;
-                                opacity: 1;
-                                transition: all 0.6s;
-                                top: 0px;
-                                left: 0px;
-                            }
-                        }
-
-                        &>a.portfolioElementLink{
-                            color: $cyan;
-                            font-weight: lighter;
-                            font-family: 'Kelson Sans';
-                            text-transform: uppercase;
-                            letter-spacing: 2px;
-                            border: 1px solid $cyan;
-                            padding: 10px;
-                            position: absolute;
-                            top: 60%;
-                            left: calc(50% - 90px);
-                            opacity:0;
-                            transition: all 0.6s;
-                            width: $portfolioElementLinkWidth;
-
-                            &:hover{
-                                color: black;
-                                background-color: $cyan;
-                                text-decoration:none;
-                            }
-                        }
                     }
 
-                    &:hover{
-                        &::after{
-                            background-color:$white;
-                            width: 80%;
-                            margin: 0 10%;
-                        }
+                    .portfolioFiltersContainerOverlay{
+                        position:fixed;
+                        top:0;
+                        left:0;
+                        width:100vw;
+                        height:100vh;
+                        background-color:rgba(0,0,0,0.5);
+                        z-index:-1;
+                    }
 
-                        & a.portfolioElementLink{
-                            opacity: 1;
-                            top: calc(50% - 13px);
-                        }
+                    &.inactive{
+                        .portfolioFilterButton{
+                            left: -87px;
 
-                        & .portfolioElementThumbnailImageContainer{
-                            &>img{
-                                left: -8%;
-                                top: -8%;
-                                width: 116%;
-                                opacity: 0.5;
+                            @include media-breakpoint-down(md) {
+                                left: 660px;
                             }
                         }
+
+                        width:0px;
+                        padding: 0px;
+                        padding-top: 16px;
                     }
 
                     @include media-breakpoint-down(md) {
-                        width:50%;
+                        position:fixed;
+                        right:0;
+                        top:0;
+                        padding: 16px;
+                        box-sizing: border-box;
+                        width: 33%;
+
+                        .portfolioFilterButtonContainer{
+                            position: static;
+                            right:0px;
+                            top:0px;
+                            width:100%;
+
+                            @include media-breakpoint-down(md) {
+                                position:static;
+                            }
+                        }
                     }
 
                     @include media-breakpoint-down(xs) {
-                        width:100%;
+                        width: 50%;
+                        overflow-y: scroll;
                     }
-                }
 
-                min-height: 32px;
-                transition: 0.5s all;
+                    min-height: 32px;
+                    height:100vh;
+                    padding: 16px;
+                    user-select: none;
+                    padding: 0;
+                    width: calc((100% / 12)*2);
+                    transition: 0.5s all;
+                }
+        
+                // Portfolio elements
+                .portfolioElementsContainer{
+                    .portfolioElement{
+                        width: 33%;
+                        display: block;
+                        padding: 0px 20px 20px 0px;
+                        float: left;
+
+                        // Lign below block
+                        &::after{
+                            content:" ";
+                            display:block;
+                            background-color:$medium-gray;
+                            height:1px;
+                            width:60%;
+                            margin: 0 20%;
+                            transition: all 0.4s;
+                        }
+
+                        &>.portfolioElementText{
+                            height: 200px;
+                            
+                            @include media-breakpoint-down(sm) {
+                                min-height: 220px;
+                            }
+
+                            @include media-breakpoint-down(xs) {
+                                height: auto;
+                                min-height: auto;
+                            }
+                        }
+
+                        &>.portfolioElementThumbnail{
+                            background-color: black;
+                            position: relative;
+                            width: 100%;
+                            padding-top: 100%;
+                            margin-bottom: 16px;
+                            overflow:hidden;
+
+                            &>.portfolioElementThumbnailImageContainer{
+                                background-color:red;
+                                top:0px;
+                                height: 100%;
+                                &>img{
+                                    position:absolute;
+                                    width:100%;
+                                    height:auto;
+                                    opacity: 1;
+                                    transition: all 0.6s;
+                                    top: 0px;
+                                    left: 0px;
+                                }
+                            }
+
+                            &>a.portfolioElementLink{
+                                color: $cyan;
+                                font-weight: lighter;
+                                font-family: 'Kelson Sans';
+                                text-transform: uppercase;
+                                letter-spacing: 2px;
+                                border: 1px solid $cyan;
+                                padding: 10px;
+                                position: absolute;
+                                top: 60%;
+                                left: calc(50% - 90px);
+                                opacity:0;
+                                transition: all 0.6s;
+                                width: $portfolioElementLinkWidth;
+
+                                &:hover{
+                                    color: black;
+                                    background-color: $cyan;
+                                    text-decoration:none;
+                                }
+                            }
+                        }
+
+                        &:hover{
+                            &::after{
+                                background-color:$white;
+                                width: 80%;
+                                margin: 0 10%;
+                            }
+
+                            & a.portfolioElementLink{
+                                opacity: 1;
+                                top: calc(50% - 13px);
+                            }
+
+                            & .portfolioElementThumbnailImageContainer{
+                                &>img{
+                                    left: -8%;
+                                    top: -8%;
+                                    width: 116%;
+                                    opacity: 0.5;
+                                }
+                            }
+                        }
+
+                        @include media-breakpoint-down(md) {
+                            width:50%;
+                        }
+
+                        @include media-breakpoint-down(xs) {
+                            width:100%;
+                        }
+                    }
+
+                    min-height: 32px;
+                    transition: 0.5s all;
+                }
             }
         }
     }

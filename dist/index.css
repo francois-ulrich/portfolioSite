@@ -46,7 +46,7 @@
   src: url(./fonts/451716bd844806e82e3013f993d4b133.eot?#iefix) format("embedded-opentype"), url(./fonts/055ea5d5f47a4cfc192025645535e7f4.woff2) format("woff2"), url(./fonts/70056769c93755e9c887b550144de1ec.woff) format("woff"), url(./fonts/b95a7e0bdb64e28b3fe91203e4437c88.ttf) format("truetype"), url(./img/e7bf35ca7fc5b81a0e4f59c9587b1282-KelsonSans-Regular.svg#KelsonSans-Regular) format("svg");
   font-weight: lighter;
   font-style: normal; }
-body #root header .headerLeft .headerBurgerMenuButton, body #root .portfolio .portfolioFilterButton {
+body #root .website header .headerLeft .headerBurgerMenuButton, body #root .website .portfolio .portfolioFilterButton {
   color: #00ffcc;
   width: 40px;
   height: 40px;
@@ -56,9 +56,20 @@ body #root header .headerLeft .headerBurgerMenuButton, body #root .portfolio .po
   align-items: center;
   cursor: pointer; }
 
+.buttonText {
+  color: #00ffcc;
+  height: 30px;
+  border: 1px solid #00ffcc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 8px 0; }
+
 body {
   min-width: 320px;
-  font-family: 'Kelson Sans'; }
+  font-family: 'Kelson Sans';
+  background-color: black; }
   body h1 {
     color: #00ffcc;
     text-transform: uppercase;
@@ -70,40 +81,29 @@ body {
       body h1 {
         font-size: 1.7rem; } }
   body h2 {
+    position: relative;
     font-size: 24px;
-    background-color: #00ffcc;
     display: inline-block;
     color: #0a0a0a;
     padding: 4px 6px;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 0px 12px;
-    margin-bottom: 40px; }
+    margin-bottom: 40px;
+    z-index: 2; }
     body h2:before {
-      transform: rotate(180deg);
+      content: "";
+      transform: skewX(-20deg);
+      width: calc(100% + 20px);
+      height: 100%;
+      background-color: #00ffcc;
       position: absolute;
-      width: 12px;
-      top: -6px;
-      left: auto;
-      margin-left: -18px;
-      content: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMi4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FscXVlXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMjUgNzUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI1IDc1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojMDBmZmNjO30NCjwvc3R5bGU+DQo8Zz4NCgk8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjAsNzUgMCw3NSAwLDAgMjUsMCAJIi8+DQo8L2c+DQo8L3N2Zz4NCg==); }
-      @media (max-width: 575.98px) {
-        body h2:before {
-          width: 10px; } }
-    body h2:after {
-      position: absolute;
-      width: 12px;
-      top: 0px;
-      right: auto;
-      margin-left: 6px;
-      content: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMi4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FscXVlXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMjUgNzUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI1IDc1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojMDBmZmNjO30NCjwvc3R5bGU+DQo8Zz4NCgk8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjAsNzUgMCw3NSAwLDAgMjUsMCAJIi8+DQo8L2c+DQo8L3N2Zz4NCg==); }
-      @media (max-width: 575.98px) {
-        body h2:after {
-          width: 10px;
-          margin-left: 8px; } }
+      top: 0;
+      left: -9px;
+      z-index: -8; }
     @media (max-width: 575.98px) {
       body h2 {
-        font-size: 17px;
+        font-size: 22px;
         letter-spacing: 0px;
         padding: 4px 8px; } }
   body p {
@@ -115,46 +115,50 @@ body {
     transition: 0.4s all; }
     body a:hover {
       color: #00ffcc; }
-  body #root {
+  body #root .website {
+    transition: 0.5s all;
     min-height: 100vh;
     background-color: #0a0a0a; }
-    body #root .websiteContainer {
+    body #root .website .websiteContainer {
       background-color: #0f0f0f;
       color: #eaeaea;
       padding-top: 20px;
       padding-bottom: 20px; }
-    body #root .headerSpace {
+    body #root .website .headerSpace {
       height: 70px;
       display: none; }
       @media (max-width: 575.98px) {
-        body #root .headerSpace {
+        body #root .website .headerSpace {
           display: block; } }
-    body #root header {
+    body #root .website header {
       background-color: #474747; }
-      body #root header > .container {
+      body #root .website header > .container {
         background-color: #323232;
         height: 100%; }
         @media (max-width: 1199.98px) {
-          body #root header > .container {
+          body #root .website header > .container {
             background-color: #474747; } }
-      body #root header .headerLeft {
+      body #root .website header .headerLeft {
         background-color: #474747;
-        height: 70px; }
-        body #root header .headerLeft:after {
-          position: absolute;
-          height: 70px;
-          width: 23px;
-          right: -23px; }
-          @media (min-width: 992px) {
-            body #root header .headerLeft:after {
-              content: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMi4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FscXVlXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMjUgNzUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI1IDc1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojNDc0NzQ3O30NCjwvc3R5bGU+DQo8Zz4NCgk8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjAsNzUgMCw3NSAwLDAgMjUsMCAJIi8+DQo8L2c+DQo8L3N2Zz4NCg==); } }
-        body #root header .headerLeft .headerLogo {
+        height: 70px;
+        z-index: 10; }
+        @media (min-width: 768px) {
+          body #root .website header .headerLeft:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #474747;
+            transform: skewX(-20deg);
+            z-index: -2; } }
+        body #root .website header .headerLeft .headerLogo {
           width: 250px;
-          height: 50px; }
-          body #root header .headerLeft .headerLogo .headerLogoImage {
+          height: 50px;
+          text-decoration: none; }
+          body #root .website header .headerLeft .headerLogo .headerLogoImage {
             height: 100%;
             width: auto; }
-          body #root header .headerLeft .headerLogo .headerLogoText {
+          body #root .website header .headerLeft .headerLogo .headerLogoText {
             font-family: Antonio;
             color: #eaeaea;
             text-transform: uppercase;
@@ -162,55 +166,63 @@ body {
             letter-spacing: 2px;
             margin-left: 8px; }
           @media (max-width: 575.98px) {
-            body #root header .headerLeft .headerLogo {
+            body #root .website header .headerLeft .headerLogo {
               width: 100%;
               margin: 11px; } }
-        body #root header .headerLeft .headerContactLinks {
+        body #root .website header .headerLeft .headerContactLinks {
           width: calc(100% - 250px);
           display: flex;
           justify-content: space-evenly; }
           @media (max-width: 575.98px) {
-            body #root header .headerLeft .headerContactLinks {
+            body #root .website header .headerLeft .headerContactLinks {
               width: 100%; } }
-        body #root header .headerLeft .headerBurgerMenuButton {
+        body #root .website header .headerLeft .headerBurgerMenuButton {
           position: absolute;
           right: 15px;
           top: 15px; }
-        body #root header .headerLeft .burgerMenuContainer {
+        body #root .website header .headerLeft .burgerMenuContainer {
           height: 0px;
           overflow: hidden;
           transition: all 0.4s; }
-          body #root header .headerLeft .burgerMenuContainer.active {
+          body #root .website header .headerLeft .burgerMenuContainer.active {
             height: auto; }
-          body #root header .headerLeft .burgerMenuContainer .burgerMenu {
+          body #root .website header .headerLeft .burgerMenuContainer .burgerMenu {
             height: auto; }
-      body #root header .headerRight {
+      body #root .website header .headerRight {
+        background-color: #474747;
         height: 70px;
-        background-color: #474747; }
+        z-index: 10; }
+        @media (min-width: 768px) {
+          body #root .website header .headerRight:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #474747;
+            transform: skewX(-20deg);
+            z-index: -2;
+            left: -12px; } }
         @media (max-width: 575.98px) {
-          body #root header .headerRight {
+          body #root .website header .headerRight {
             height: 0px;
             min-height: 0px;
             transition: all 0.4s; }
-            body #root header .headerRight.active {
+            body #root .website header .headerRight.active {
               height: 300px; } }
-        body #root header .headerRight:before {
+        body #root .website header .headerRight:before {
           position: absolute;
           height: 70px;
           width: 23px;
           left: -23px;
           transform: rotate(180deg); }
-          @media (min-width: 992px) {
-            body #root header .headerRight:before {
-              content: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMi4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FscXVlXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMjUgNzUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI1IDc1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojNDc0NzQ3O30NCjwvc3R5bGU+DQo8Zz4NCgk8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjAsNzUgMCw3NSAwLDAgMjUsMCAJIi8+DQo8L2c+DQo8L3N2Zz4NCg==); } }
-        body #root header .headerRight nav.headerNav {
+        body #root .website header .headerRight nav.headerNav {
           width: 100%;
           height: 100%;
           display: flex;
           justify-content: space-evenly;
           align-items: center;
           overflow: hidden; }
-          body #root header .headerRight nav.headerNav .headerNavLink {
+          body #root .website header .headerRight nav.headerNav .headerNavLink {
             color: #eaeaea;
             font-size: 12pt;
             text-decoration: none;
@@ -218,16 +230,16 @@ body {
             text-transform: uppercase;
             letter-spacing: 1px;
             padding: 5px 10px; }
-            body #root header .headerRight nav.headerNav .headerNavLink:hover {
+            body #root .website header .headerRight nav.headerNav .headerNavLink:hover {
               color: #00ffcc;
               transition: color 0s; }
-            body #root header .headerRight nav.headerNav .headerNavLink.active {
+            body #root .website header .headerRight nav.headerNav .headerNavLink.active {
               background-color: #00ffcc;
               color: #474747; }
-            body #root header .headerRight nav.headerNav .headerNavLink > svg {
+            body #root .website header .headerRight nav.headerNav .headerNavLink > svg {
               margin-right: 8px; }
             @media (max-width: 575.98px) {
-              body #root header .headerRight nav.headerNav .headerNavLink {
+              body #root .website header .headerRight nav.headerNav .headerNavLink {
                 display: flex;
                 padding: 0;
                 text-align: center;
@@ -235,50 +247,53 @@ body {
                 align-items: center;
                 height: 60px; } }
           @media (max-width: 575.98px) {
-            body #root header .headerRight nav.headerNav {
+            body #root .website header .headerRight nav.headerNav {
               display: block; } }
       @media (max-width: 575.98px) {
-        body #root header {
+        body #root .website header {
           position: fixed;
           z-index: 10;
           width: 100%;
           background-color: red;
           top: 0; } }
-    body #root .home img.homeProfileImage {
+    body #root .website .home img.homeProfileImage {
       width: 100%;
       max-width: 250px;
-      margin-bottom: 35px; }
-    body #root .home .skills .skill {
+      margin-bottom: 25px; }
+    body #root .website .home .skills .skill {
       padding: 2px 0px; }
-      body #root .home .skills .skill .skillTitle {
+      body #root .website .home .skills .skill .skillTitle {
         font-size: 15px; }
-      body #root .home .skills .skill .skillBarContainer {
+      body #root .website .home .skills .skill .skillBarContainer {
         border: 1px solid #00ffcc;
         height: 24px;
         padding: 1px; }
-        body #root .home .skills .skill .skillBarContainer .skillBar {
+        body #root .website .home .skills .skill .skillBarContainer .skillBar {
           background-color: #00ffcc;
-          height: 100%; }
+          height: 100%;
+          width: 0%;
+          opacity: 1;
+          transition: all 1s; }
         @media (max-width: 991.98px) {
-          body #root .home .skills .skill .skillBarContainer {
+          body #root .website .home .skills .skill .skillBarContainer {
             height: 12px; } }
     @media (max-width: 991.98px) {
-      body #root .home .skills {
+      body #root .website .home .skills {
         margin-bottom: 30px; } }
-    body #root .home .hobby {
+    body #root .website .home .hobby {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: 16px; }
-      body #root .home .hobby .hobbyFrame {
+      body #root .website .home .hobby .hobbyFrame {
         width: 64px;
         height: 64px;
         border-radius: 4px;
         position: relative;
         overflow: hidden;
         background-color: black; }
-        body #root .home .hobby .hobbyFrame:hover {
+        body #root .website .home .hobby .hobbyFrame:hover {
           /*BLOC 1*/
           /*BLOC 2*/
           /*BLOC 3*/
@@ -325,16 +340,16 @@ body {
   100% {
     top: 0px;
     opacity: 1; } }
-          body #root .home .hobby .hobbyFrame:hover img.gamedev1 {
+          body #root .website .home .hobby .hobbyFrame:hover img.gamedev1 {
             animation-name: gamedev1;
             animation-duration: 1s; }
-          body #root .home .hobby .hobbyFrame:hover img.gamedev2 {
+          body #root .website .home .hobby .hobbyFrame:hover img.gamedev2 {
             animation-name: gamedev2;
             animation-duration: 1s; }
-          body #root .home .hobby .hobbyFrame:hover img.gamedev3 {
+          body #root .website .home .hobby .hobbyFrame:hover img.gamedev3 {
             animation-name: gamedev3;
             animation-duration: 1s; }
-          body #root .home .hobby .hobbyFrame:hover img.gamedev4 {
+          body #root .website .home .hobby .hobbyFrame:hover img.gamedev4 {
             animation-name: gamedev4;
             animation-duration: 1s; }
 
@@ -343,7 +358,7 @@ body {
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
-          body #root .home .hobby .hobbyFrame:hover .series1 {
+          body #root .website .home .hobby .hobbyFrame:hover .series1 {
             animation-name: series1;
             animation-iteration-count: infinite;
             animation-duration: 1s; }
@@ -353,7 +368,7 @@ body {
     left: -49px; }
   100% {
     left: 0px; } }
-          body #root .home .hobby .hobbyFrame:hover .interet_bloc_dessin:hover .drawing1 {
+          body #root .website .home .hobby .hobbyFrame:hover .interet_bloc_dessin:hover .drawing1 {
             animation-name: drawing1;
             animation-duration: 0.5s; }
 
@@ -362,7 +377,7 @@ body {
     left: -49px; }
   100% {
     left: 0px; } }
-          body #root .home .hobby .hobbyFrame:hover .drawing1 {
+          body #root .website .home .hobby .hobbyFrame:hover .drawing1 {
             animation-name: drawing1;
             animation-duration: 0.5s; }
 
@@ -383,73 +398,73 @@ body {
     left: 0px; }
   100% {
     left: -64px; } }
-          body #root .home .hobby .hobbyFrame:hover .games1 {
+          body #root .website .home .hobby .hobbyFrame:hover .games1 {
             animation-name: games1;
             animation-duration: 1s;
             animation-iteration-count: infinite;
             animation-timing-function: linear; }
-          body #root .home .hobby .hobbyFrame:hover .games2 {
+          body #root .website .home .hobby .hobbyFrame:hover .games2 {
             display: block; }
-          body #root .home .hobby .hobbyFrame:hover .games3 {
+          body #root .website .home .hobby .hobbyFrame:hover .games3 {
             display: none; }
-          body #root .home .hobby .hobbyFrame:hover .games2 {
+          body #root .website .home .hobby .hobbyFrame:hover .games2 {
             display: none; }
-          body #root .home .hobby .hobbyFrame:hover .games3 {
+          body #root .website .home .hobby .hobbyFrame:hover .games3 {
             display: block; }
-          body #root .home .hobby .hobbyFrame:hover .games4 {
+          body #root .website .home .hobby .hobbyFrame:hover .games4 {
             display: none; }
-          body #root .home .hobby .hobbyFrame:hover .games4 {
+          body #root .website .home .hobby .hobbyFrame:hover .games4 {
             display: block;
             animation-name: games3;
             animation-duration: 0.4s;
             animation-iteration-count: infinite;
             animation-timing-function: linear; }
-          body #root .home .hobby .hobbyFrame:hover .animation2 {
+          body #root .website .home .hobby .hobbyFrame:hover .animation2 {
             display: block; }
-        body #root .home .hobby .hobbyFrame .games3 {
+        body #root .website .home .hobby .hobbyFrame .games3 {
           display: none; }
-        body #root .home .hobby .hobbyFrame .games4 {
+        body #root .website .home .hobby .hobbyFrame .games4 {
           display: none;
           top: 36px; }
-        body #root .home .hobby .hobbyFrame .animation1, body #root .home .hobby .hobbyFrame .animation2 {
+        body #root .website .home .hobby .hobbyFrame .animation1, body #root .website .home .hobby .hobbyFrame .animation2 {
           width: auto;
           height: 68px;
           position: absolute;
           left: -15px;
           transform: scaleX(-1);
           filter: contrast(-200%); }
-        body #root .home .hobby .hobbyFrame .animation2 {
+        body #root .website .home .hobby .hobbyFrame .animation2 {
           display: none; }
-        body #root .home .hobby .hobbyFrame img {
+        body #root .website .home .hobby .hobbyFrame img {
           position: absolute;
           image-rendering: unset;
           left: 0px;
           top: 0px; }
-      body #root .home .hobby > span {
+      body #root .website .home .hobby > span {
         margin: 10px;
         text-align: center;
         font-size: 13px; }
-    body #root .home .experiences {
+    body #root .website .home .experiences {
       margin-bottom: 30px; }
-      body #root .home .experiences .experience {
+      body #root .website .home .experiences .experience {
         padding-bottom: 32px;
         position: relative;
         overflow: hidden; }
-        body #root .home .experiences .experience .experienceDate {
+        body #root .website .home .experiences .experience .experienceDate {
           text-align: right; }
-          body #root .home .experiences .experience .experienceDate::first-letter {
+          body #root .website .home .experiences .experience .experienceDate::first-letter {
             text-transform: capitalize; }
-          body #root .home .experiences .experience .experienceDate .experienceDateTextContainer .experienceDateText {
+          body #root .website .home .experiences .experience .experienceDate .experienceDateTextContainer .experienceDateText {
             display: inline-block; }
             @media (max-width: 575.98px) {
-              body #root .home .experiences .experience .experienceDate .experienceDateTextContainer .experienceDateText {
+              body #root .website .home .experiences .experience .experienceDate .experienceDateTextContainer .experienceDateText {
                 position: relative;
                 width: 150px;
                 top: -24px;
                 left: 115%;
                 text-align: left; } }
           @media (max-width: 575.98px) {
-            body #root .home .experiences .experience .experienceDate .experienceDateTextContainer:before {
+            body #root .website .home .experiences .experience .experienceDate .experienceDateTextContainer:before {
               content: '';
               display: inline-block;
               width: 30px;
@@ -461,7 +476,7 @@ body {
               top: 9px;
               left: -15px; } }
           @media (min-width: 576px) {
-            body #root .home .experiences .experience .experienceDate .experienceDateTextContainer:after {
+            body #root .website .home .experiences .experience .experienceDate .experienceDateTextContainer:after {
               content: '';
               display: inline-block;
               width: 30px;
@@ -473,14 +488,14 @@ body {
               top: 9px;
               margin-left: 10px; } }
           @media (max-width: 767.98px) {
-            body #root .home .experiences .experience .experienceDate .experienceDateTextContainer > span {
+            body #root .website .home .experiences .experience .experienceDate .experienceDateTextContainer > span {
               position: relative;
               left: 40px;
               top: -25px; } }
-          body #root .home .experiences .experience .experienceDate .experienceDateExtraText {
+          body #root .website .home .experiences .experience .experienceDate .experienceDateExtraText {
             margin-right: 42px;
             font-weight: lighter; }
-          body #root .home .experiences .experience .experienceDate:after {
+          body #root .website .home .experiences .experience .experienceDate:after {
             content: '';
             height: calc(100% + 32px);
             display: inline-block;
@@ -490,100 +505,109 @@ body {
             right: 30px;
             top: 0; }
           @media (max-width: 575.98px) {
-            body #root .home .experiences .experience .experienceDate {
+            body #root .website .home .experiences .experience .experienceDate {
               padding: 0; } }
-        body #root .home .experiences .experience .experienceText .experienceTextLocation {
+        body #root .website .home .experiences .experience .experienceText .experienceTextLocation {
           display: block;
           margin-bottom: 5px; }
         @media (max-width: 575.98px) {
-          body #root .home .experiences .experience .experienceText {
+          body #root .website .home .experiences .experience .experienceText {
             margin-top: 55px; } }
-        body #root .home .experiences .experience:nth-last-child(1) .experienceDate:after {
+        body #root .website .home .experiences .experience:nth-last-child(1) .experienceDate:after {
           background: linear-gradient(#00ffcc calc(100% - 100px), rgba(0, 255, 204, 0) 100%); }
-    body #root .portfolio .portfolioFilterButton {
+    body #root .website .portfolio .portfolioFilterButton {
       position: relative;
       left: 0px;
       top: 0px;
       transition: 0.5s all; }
       @media (max-width: 991.98px) {
-        body #root .portfolio .portfolioFilterButton {
+        body #root .website .portfolio .portfolioFilterButton {
           transition: none; } }
-    body #root .portfolio .portfolioFiltersContainer {
+    body #root .website .portfolio .portfolioFiltersContainer {
       background-color: #0f0f0f;
+      z-index: 50;
       min-height: 32px;
       height: 100vh;
-      overflow-y: scroll;
       padding: 16px;
       user-select: none;
       padding: 0;
       width: calc((100% / 12)*2);
       transition: 0.5s all; }
-      body #root .portfolio .portfolioFiltersContainer .portfolioFiltersContainerList {
+      body #root .website .portfolio .portfolioFiltersContainer .portfolioFiltersContainerList {
         overflow: hidden;
         transition: 0.5s all; }
-        body #root .portfolio .portfolioFiltersContainer .portfolioFiltersContainerList .portfolioFiltersList {
+        body #root .website .portfolio .portfolioFiltersContainer .portfolioFiltersContainerList .portfolioFiltersList {
           width: 190px; }
-          body #root .portfolio .portfolioFiltersContainer .portfolioFiltersContainerList .portfolioFiltersList .portfolioFilter input[type="checkbox"].portfolioFilterCheckbox {
+          body #root .website .portfolio .portfolioFiltersContainer .portfolioFiltersContainerList .portfolioFiltersList .portfolioFilter input[type="checkbox"].portfolioFilterCheckbox {
             -webkit-appearance: none;
             background-color: #474747;
             display: inline-block;
             width: 14px;
             height: 14px;
             position: relative; }
-            body #root .portfolio .portfolioFiltersContainer .portfolioFiltersContainerList .portfolioFiltersList .portfolioFilter input[type="checkbox"].portfolioFilterCheckbox:checked:after {
+            body #root .website .portfolio .portfolioFiltersContainer .portfolioFiltersContainerList .portfolioFiltersList .portfolioFilter input[type="checkbox"].portfolioFilterCheckbox:checked:after {
               content: '\2714';
               font-size: 16px;
               position: absolute;
               top: -4px;
               left: 1px;
               color: #00ffcc; }
-            body #root .portfolio .portfolioFiltersContainer .portfolioFiltersContainerList .portfolioFiltersList .portfolioFilter input[type="checkbox"].portfolioFilterCheckbox:focus {
+            body #root .website .portfolio .portfolioFiltersContainer .portfolioFiltersContainerList .portfolioFiltersList .portfolioFilter input[type="checkbox"].portfolioFilterCheckbox:focus {
               outline: none; }
-          body #root .portfolio .portfolioFiltersContainer .portfolioFiltersContainerList .portfolioFiltersList .portfolioFilter span.portfolioFilterName {
+          body #root .website .portfolio .portfolioFiltersContainer .portfolioFiltersContainerList .portfolioFiltersList .portfolioFilter span.portfolioFilterName {
             padding-left: 15px; }
       @media (max-width: 991.98px) {
-        body #root .portfolio .portfolioFiltersContainer .portfolioFilterButton {
+        body #root .website .portfolio .portfolioFiltersContainer .portfolioFilterButton {
           position: static; } }
-      body #root .portfolio .portfolioFiltersContainer .portfolioFilterButtonContainer {
+      body #root .website .portfolio .portfolioFiltersContainer .portfolioFilterButtonContainer {
         height: 40px;
         margin-bottom: 16px; }
-      body #root .portfolio .portfolioFiltersContainer.inactive {
+      body #root .website .portfolio .portfolioFiltersContainer .portfolioFiltersContainerOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1; }
+      body #root .website .portfolio .portfolioFiltersContainer.inactive {
         width: 0px;
         padding: 0px;
         padding-top: 16px; }
-        body #root .portfolio .portfolioFiltersContainer.inactive .portfolioFilterButton {
+        body #root .website .portfolio .portfolioFiltersContainer.inactive .portfolioFilterButton {
           left: -87px; }
           @media (max-width: 991.98px) {
-            body #root .portfolio .portfolioFiltersContainer.inactive .portfolioFilterButton {
+            body #root .website .portfolio .portfolioFiltersContainer.inactive .portfolioFilterButton {
               left: 660px; } }
       @media (max-width: 991.98px) {
-        body #root .portfolio .portfolioFiltersContainer {
+        body #root .website .portfolio .portfolioFiltersContainer {
           position: fixed;
           right: 0;
           top: 0;
           padding: 16px;
           box-sizing: border-box;
           width: 33%; }
-          body #root .portfolio .portfolioFiltersContainer .portfolioFilterButtonContainer {
+          body #root .website .portfolio .portfolioFiltersContainer .portfolioFilterButtonContainer {
             position: static;
             right: 0px;
             top: 0px;
             width: 100%; } }
     @media (max-width: 991.98px) and (max-width: 991.98px) {
-      body #root .portfolio .portfolioFiltersContainer .portfolioFilterButtonContainer {
+      body #root .website .portfolio .portfolioFiltersContainer .portfolioFilterButtonContainer {
         position: static; } }
       @media (max-width: 575.98px) {
-        body #root .portfolio .portfolioFiltersContainer {
-          width: 50%; } }
-    body #root .portfolio .portfolioElementsContainer {
+        body #root .website .portfolio .portfolioFiltersContainer {
+          width: 50%;
+          overflow-y: scroll; } }
+    body #root .website .portfolio .portfolioElementsContainer {
       min-height: 32px;
       transition: 0.5s all; }
-      body #root .portfolio .portfolioElementsContainer .portfolioElement {
+      body #root .website .portfolio .portfolioElementsContainer .portfolioElement {
         width: 33%;
         display: block;
         padding: 0px 20px 20px 0px;
         float: left; }
-        body #root .portfolio .portfolioElementsContainer .portfolioElement::after {
+        body #root .website .portfolio .portfolioElementsContainer .portfolioElement::after {
           content: " ";
           display: block;
           background-color: #474747;
@@ -591,27 +615,27 @@ body {
           width: 60%;
           margin: 0 20%;
           transition: all 0.4s; }
-        body #root .portfolio .portfolioElementsContainer .portfolioElement > .portfolioElementText {
+        body #root .website .portfolio .portfolioElementsContainer .portfolioElement > .portfolioElementText {
           height: 200px; }
           @media (max-width: 767.98px) {
-            body #root .portfolio .portfolioElementsContainer .portfolioElement > .portfolioElementText {
+            body #root .website .portfolio .portfolioElementsContainer .portfolioElement > .portfolioElementText {
               min-height: 220px; } }
           @media (max-width: 575.98px) {
-            body #root .portfolio .portfolioElementsContainer .portfolioElement > .portfolioElementText {
+            body #root .website .portfolio .portfolioElementsContainer .portfolioElement > .portfolioElementText {
               height: auto;
               min-height: auto; } }
-        body #root .portfolio .portfolioElementsContainer .portfolioElement > .portfolioElementThumbnail {
+        body #root .website .portfolio .portfolioElementsContainer .portfolioElement > .portfolioElementThumbnail {
           background-color: black;
           position: relative;
           width: 100%;
           padding-top: 100%;
           margin-bottom: 16px;
           overflow: hidden; }
-          body #root .portfolio .portfolioElementsContainer .portfolioElement > .portfolioElementThumbnail > .portfolioElementThumbnailImageContainer {
+          body #root .website .portfolio .portfolioElementsContainer .portfolioElement > .portfolioElementThumbnail > .portfolioElementThumbnailImageContainer {
             background-color: red;
             top: 0px;
             height: 100%; }
-            body #root .portfolio .portfolioElementsContainer .portfolioElement > .portfolioElementThumbnail > .portfolioElementThumbnailImageContainer > img {
+            body #root .website .portfolio .portfolioElementsContainer .portfolioElement > .portfolioElementThumbnail > .portfolioElementThumbnailImageContainer > img {
               position: absolute;
               width: 100%;
               height: auto;
@@ -619,7 +643,7 @@ body {
               transition: all 0.6s;
               top: 0px;
               left: 0px; }
-          body #root .portfolio .portfolioElementsContainer .portfolioElement > .portfolioElementThumbnail > a.portfolioElementLink {
+          body #root .website .portfolio .portfolioElementsContainer .portfolioElement > .portfolioElementThumbnail > a.portfolioElementLink {
             color: #00ffcc;
             font-weight: lighter;
             font-family: 'Kelson Sans';
@@ -633,27 +657,27 @@ body {
             opacity: 0;
             transition: all 0.6s;
             width: 185px; }
-            body #root .portfolio .portfolioElementsContainer .portfolioElement > .portfolioElementThumbnail > a.portfolioElementLink:hover {
+            body #root .website .portfolio .portfolioElementsContainer .portfolioElement > .portfolioElementThumbnail > a.portfolioElementLink:hover {
               color: black;
               background-color: #00ffcc;
               text-decoration: none; }
-        body #root .portfolio .portfolioElementsContainer .portfolioElement:hover::after {
+        body #root .website .portfolio .portfolioElementsContainer .portfolioElement:hover::after {
           background-color: #eaeaea;
           width: 80%;
           margin: 0 10%; }
-        body #root .portfolio .portfolioElementsContainer .portfolioElement:hover a.portfolioElementLink {
+        body #root .website .portfolio .portfolioElementsContainer .portfolioElement:hover a.portfolioElementLink {
           opacity: 1;
           top: calc(50% - 13px); }
-        body #root .portfolio .portfolioElementsContainer .portfolioElement:hover .portfolioElementThumbnailImageContainer > img {
+        body #root .website .portfolio .portfolioElementsContainer .portfolioElement:hover .portfolioElementThumbnailImageContainer > img {
           left: -8%;
           top: -8%;
           width: 116%;
           opacity: 0.5; }
         @media (max-width: 991.98px) {
-          body #root .portfolio .portfolioElementsContainer .portfolioElement {
+          body #root .website .portfolio .portfolioElementsContainer .portfolioElement {
             width: 50%; } }
         @media (max-width: 575.98px) {
-          body #root .portfolio .portfolioElementsContainer .portfolioElement {
+          body #root .website .portfolio .portfolioElementsContainer .portfolioElement {
             width: 100%; } }
   body .col_0 {
     width: 0; }

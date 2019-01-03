@@ -1,5 +1,5 @@
 import * as React from "react";
-import { NavLink, Link  } from "react-router-dom";
+import { NavLink  } from "react-router-dom";
 
 // Load fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -13,16 +13,7 @@ library.add(faLinkedinIn, faGithub, faAt);
 // Links in header
 const links = require("./../../links.json");
 
-// interface HeaderNavProps{
-//     open:boolean,
-// }
-
-// export default class HeaderNav extends React.Component<HeaderNavProps> {
 export default class HeaderNav extends React.Component {
-    // constructor(props:HeaderNavProps){
-    //     super(props);
-    // }
-
     render(){
         return (
             <nav className="headerNav">

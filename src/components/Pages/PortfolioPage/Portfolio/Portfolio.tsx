@@ -216,14 +216,14 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
         return (
             <div className="portfolio">
                 <Row>
-                    <Col md={this.state.toggleFilters?10:12} className="portfolioElementsContainer">
+                    <Col lg={this.state.toggleFilters?10:12} className="portfolioElementsContainer">
                         <Row>
                             <Col xs="8">
                                 <h1>Portfolio</h1>
                             </Col>
                             <Col xs="4">
-                                <div className="portfolioFilterButtonContainer d-flex d-lg-none justify-content-end">
-                                    <div className="portfolioFilterButton" onClick={ this.toggleFilters }>
+                                <div className="portfolioFilterButtonContainer d-flex justify-content-end">
+                                    <div className="portfolioFilterButton d-lg-none" onClick={ this.toggleFilters }>
                                         {
                                             this.state.toggleFilters 
                                             ? <FontAwesomeIcon icon={['fas', 'times']} /> 
@@ -240,6 +240,15 @@ export default class Portfolio extends React.Component<PortfolioProps,PortfolioS
                     </Col>
 
                     <div className={"portfolioFiltersContainer" + (this.state.toggleFilters ? "" : " inactive")}>
+                        
+                        {
+                            this.state.toggleFilters
+                            ?
+                            <div className="portfolioFiltersContainerOverlay d-block d-md-none" onClick={ this.toggleFilters }/>
+                            :
+                            null
+                        }
+                        
                         <div className="portfolioFilterButtonContainer">
                             <div className="portfolioFilterButton" onClick={ this.toggleFilters }>
                                 {

@@ -7,6 +7,8 @@ interface SkillProps{
     maxValue: number
 }
 
+
+
 export default class Skill extends React.Component<SkillProps>{
     public static defaultProps = {
         maxValue: 10
@@ -16,9 +18,13 @@ export default class Skill extends React.Component<SkillProps>{
         super(props);
     }
 
+    componentDidMount(){
+        this.setState({
+            value: this.props.value
+        })
+    }
+
     render(){
-
-
         return(
             <Row className="skill">
                 <Col xl="5">
@@ -26,7 +32,7 @@ export default class Skill extends React.Component<SkillProps>{
                 </Col>
                 <Col xl="7">
                     <div className="skillBarContainer">
-                        <div className="skillBar" style={{width: (this.props.value / this.props.maxValue) * 100 +"%" }}></div>
+                        <div className="skillBar" style={{width: (this.props.value / this.props.maxValue) * 100 +"%"}}></div>
                     </div>
                 </Col>
             </Row>

@@ -1,5 +1,6 @@
 import * as React from "react";
 import {Row, Col} from 'reactstrap';
+import { NavLink  } from "react-router-dom";
 
 import Hobbies from "./Hobbies/Hobbies";
 import Experiences from "./Experiences/Experiences";
@@ -21,8 +22,22 @@ export default class HomePage extends React.Component{
                     </Col>
                 </Row>
                 <Row>
-                    <Col lg={4} className="text-center">
-                        <img src={imgProfile} className="homeProfileImage"/>
+                    <Col lg={4}>
+                        <Row>
+                            <Col className="text-center">
+                                <img src={imgProfile} className="homeProfileImage"/>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="text-center" sm={{size:6,offset:3}} lg={{size:8,offset:2}}>
+                                <a className="buttonText" href="./francois_ulrich_cv.pdf">Voir mon CV</a>
+                            </Col>
+                            <Col className="text-center" sm={{size:6,offset:3}} lg={{size:8,offset:2}}>
+                                <NavLink className="buttonText" to="/portfolio">Portfolio</NavLink>
+                            </Col>
+                        </Row>
+                        
+                        <br/>
                     </Col>
                     <Col lg={8}>
                         <Row>
